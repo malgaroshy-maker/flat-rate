@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./backend/data:/app/data
+      - ./backend/.env:/app/.env:ro
+      - ./تقرير اليد العاملة بالكامل.xlsx:/app/تقرير اليد العاملة بالكامل.xlsx:ro
+      - ./اليد العاملة منذ فتح المركز.xlsx:/app/اليد العاملة منذ فتح المركز.xlsx:ro
+      - ./The Libyan Automotive Dictionary of Mechanical and Technical Terms.docx:/app/The Libyan Automotive Dictionary of Mechanical and Technical Terms.docx:ro
+    environment:
+      - HF_HUB_DISABLE_SYMLINKS_WARNING=1
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped

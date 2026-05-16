@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Env
+.env
+.env.local
+.env.*.local
+!.env.template
+
+# ChromaDB
+chroma_db/
+*.chroma/
+
+# Model cache
+backend/.model_cache/
+*.model_cache/
+
+# Generated data
+backend/data/dictionary.json
+backend/data/chats/
+depts.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
