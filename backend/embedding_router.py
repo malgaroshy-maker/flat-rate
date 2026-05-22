@@ -19,10 +19,7 @@ class EmbeddingRouter:
             return False
         if settings.EMBEDDING_SOURCE != "gemini":
             return False
-        corpus = self._detect_corpus_model()
-        if corpus is None:
-            return False
-        return "gemini" in corpus.lower()
+        return True  # trust EMBEDDING_SOURCE explicitly
 
     @property
     def active_model_name(self) -> str:
