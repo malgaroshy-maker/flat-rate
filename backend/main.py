@@ -31,9 +31,10 @@ app.include_router(chat_router)
 
 @app.get("/api/health")
 async def health():
-    import chromadb
+    import traceback
     chroma_info = {}
     try:
+        import chromadb
         client = chromadb.PersistentClient(path=settings.CHROMA_PERSIST_DIR)
         collections = client.list_collections()
         for col in collections:
@@ -42,7 +43,7 @@ async def health():
                 "embedding_model": (col.metadata or {}).get("embedding_model", "none"),
             }
     except Exception:
-        chroma_info = {"error": "unavailable"}
+        chroma_info = {"error": traceback.format_exc().split('\n')[-3:]}
     return {
         "status": "ok",
         "mode": "cloud" if settings.use_cloud else "local",
