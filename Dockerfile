@@ -6,7 +6,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir \
     fastapi==0.115.0 \
     uvicorn==0.30.6 \
-    chromadb==0.5.5 \
+    chromadb==1.5.9 \
     openpyxl==3.1.5 \
     python-docx==1.1.2 \
     google-genai==1.9.0 \
