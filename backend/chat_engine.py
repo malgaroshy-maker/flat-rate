@@ -19,9 +19,9 @@ async def stream_chat_response(
 ) -> AsyncGenerator[str, None]:
     """Generate a streaming chat response with RAG context and multi-turn history."""
 
-    # 1. Only run RAG if this is the first message (no history)
+    # 1. Run RAG if no meaningful conversation history (0-1 messages = first query)
     hits = []
-    if not history_messages:
+    if not history_messages or len(history_messages) <= 1:
         query_result = execute_query(message, n_results=5)
         hits = query_result.get("hits", [])
     rag_context = format_rag_context(hits)
