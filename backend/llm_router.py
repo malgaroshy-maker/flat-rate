@@ -23,10 +23,7 @@ class LLMRouter:
 
     def generate(self, prompt: str, system: Optional[str] = None) -> str:
         if self.use_cloud:
-            try:
-                return self._generate_cloud(prompt, system)
-            except Exception as e:
-                print(f"[LLMRouter] Cloud generation failed ({e}), falling back to local")
+            return self._generate_cloud(prompt, system)
         return self._generate_local(prompt, system)
 
     def _api_key_or_none(self) -> Optional[str]:

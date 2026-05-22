@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: labor-estimator
+    runtime: docker
+    dockerfilePath: backend/Dockerfile.render
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: EMBEDDING_SOURCE
+        value: gemini
+      - key: FORCE_LOCAL
+        value: "false"

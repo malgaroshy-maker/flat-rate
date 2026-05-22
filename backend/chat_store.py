@@ -23,16 +23,20 @@ def _session_path(session_id: str) -> Path:
 
 def create_session(title: str = "", lang: str = "ar") -> dict:
     sid = str(uuid.uuid4())[:8]
+    return create_session_with_id(sid, title, lang)
+
+
+def create_session_with_id(session_id: str, title: str = "", lang: str = "ar") -> dict:
     now = _now()
     session = {
-        "id": sid,
+        "id": session_id,
         "title": title,
         "lang": lang,
         "created_at": now,
         "updated_at": now,
         "messages": [],
     }
-    _session_path(sid).write_text(json.dumps(session, ensure_ascii=False, indent=2), encoding="utf-8")
+    _session_path(session_id).write_text(json.dumps(session, ensure_ascii=False, indent=2), encoding="utf-8")
     return session
 
 

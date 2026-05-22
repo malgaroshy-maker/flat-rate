@@ -44,11 +44,10 @@ class EmbeddingRouter:
         return self._corpus_model
 
     def encode(self, texts: list[str]) -> list[list[float]]:
+        """Embed texts. Uses cloud Gemini if API key set + EMBEDDING_SOURCE=gemini.
+        Only falls back to local when EMBEDDING_SOURCE != 'gemini'."""
         if self.use_cloud:
-            try:
-                return self._encode_cloud(texts)
-            except Exception:
-                pass
+            return self._encode_cloud(texts)
         return self._encode_local(texts)
 
     def encode_single(self, text: str) -> list[float]:

@@ -1,0 +1,19 @@
+# Fly.io optimized Dockerfile — build context is repo root
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir fastapi uvicorn chromadb openpyxl python-docx google-genai reportlab arabic-reshaper python-bidi httpx python-dotenv sentence-transformers
+
+COPY backend/ .
+COPY data-files/main.xlsx /app/data-files/main.xlsx
+COPY data-files/extra.xlsx /app/data-files/extra.xlsx
+COPY data-files/dictionary.docx /app/data-files/dictionary.docx
+COPY chroma_db/ /app/chroma_db_seed/
+
+RUN mkdir -p /app/chroma_db /app/data/chats /app/chroma_db_seed
+
+EXPOSE 8000
+
+CMD ["python", "startup.py"]
