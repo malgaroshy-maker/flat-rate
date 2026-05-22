@@ -22,6 +22,7 @@ COPY backend/ .
 COPY data-files/ /app/data-files/
 
 ENV EMBEDDING_SOURCE=gemini
+ENV CHROMA_PERSIST_DIR=/app/chroma_db
 
 EXPOSE 8000
 
