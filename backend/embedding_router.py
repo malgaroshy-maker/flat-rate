@@ -76,23 +76,30 @@ class EmbeddingRouter:
 
         client = genai.Client(api_key=settings.GEMINI_API_KEY)
         results: list[list[float]] = []
-        # Batch 20 texts per API call to avoid rate limits
-        batch_size = 20
-        import time
-        for i in range(0, len(texts), batch_size):
-            batch = texts[i:i + batch_size]
-            for text in batch:
-                result = client.models.embed_content(
-                    model=settings.GEMINI_EMBEDDING_MODEL,
-                    contents=text,
-                    config=types.EmbedContentConfig(output_dimensionality=384),
-                )
-                if result.embeddings:
-                    results.append(list(result.embeddings[0].values))
-                else:
-                    results.append([0.0] * 384)
-            if i + batch_size < len(texts):
-                time.sleep(1)  # respect rate limits
+        for text in texts:
+            for attempt in range(5):
+                try:
+                    result = client.models.embed_content(
+                        model=settings.GEMINI_EMBEDDING_MODEL,
+                        contents=text,
+                        config=types.EmbedContentConfig(output_dimensionality=384),
+                    )
+                    if result.embeddings:
+                        results.append(list(result.embeddings[0].values))
+                    else:
+                        results.append([0.0] * 384)
+                    break
+                except Exception as e:
+                    msg = str(e)
+                    if '429' in msg or 'RESOURCE_EXHAUSTED' in msg:
+                        wait = (attempt + 1) * 5
+                        import time
+                        time.sleep(wait)
+                        continue
+                    else:
+                        raise
+            else:
+                results.append([0.0] * 384)
         return results
 
 
