@@ -1,5 +1,4 @@
-# Render.com Dockerfile — cloud-only (Gemini embeddings v3 + LLM)
-# Cache bust: 2026-05-22-v3
+# Render.com Dockerfile — cloud-only (Gemini embeddings v4)
 FROM python:3.12-slim
 
 WORKDIR /app
