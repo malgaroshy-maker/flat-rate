@@ -2,7 +2,6 @@
 """Render startup: seed ChromaDB from baked-in data, then start uvicorn on $PORT."""
 import os
 import shutil
-import chromadb
 from pathlib import Path
 
 CHROMA_PATH = Path("/app/chroma_db")
@@ -10,15 +9,14 @@ SEED_PATH = Path("/app/chroma_db_seed")
 
 
 def chroma_has_data() -> bool:
-    try:
-        client = chromadb.PersistentClient(path=str(CHROMA_PATH))
-        collections = client.list_collections()
-        for col in collections:
-            if col.count() > 0:
-                print(f"Collection '{col.name}' has {col.count()} records")
-                return True
-    except Exception as e:
-        print(f"ChromaDB check failed: {e}")
+    if not CHROMA_PATH.exists():
+        return False
+    dirs = [d for d in CHROMA_PATH.iterdir() if d.is_dir()]
+    if not dirs:
+        return False
+    for d in dirs:
+        if (d / "data_level0.bin").exists():
+            return True
     return False
 
 
@@ -27,12 +25,12 @@ def seed_chroma() -> None:
         print("No seed data found.")
         return
     print(f"Seeding ChromaDB from {SEED_PATH}...")
-    CHROMA_PATH.mkdir(parents=True, exist_ok=True)
+    if CHROMA_PATH.exists():
+        shutil.rmtree(str(CHROMA_PATH))
+    CHROMA_PATH.mkdir(parents=True)
     for item in SEED_PATH.iterdir():
         dst = CHROMA_PATH / item.name
         if item.is_dir():
-            if dst.exists():
-                shutil.rmtree(str(dst))
             shutil.copytree(str(item), str(dst))
         else:
             shutil.copy2(str(item), str(dst))
