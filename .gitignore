@@ -17,18 +17,21 @@ out/
 .env.*.local
 !.env.template
 
-# ChromaDB
-chroma_db/
-*.chroma/
+# ChromaDB (tracked for Render Docker build)
+# chroma_db/
+# *.chroma/
 
 # Model cache
 backend/.model_cache/
 *.model_cache/
 
 # Generated data
-backend/data/dictionary.json
+# backend/data/dictionary.json
 backend/data/chats/
 depts.json
+
+# Build artifacts
+# data-files/
 
 # IDE
 .vscode/

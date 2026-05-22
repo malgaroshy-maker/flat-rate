@@ -1,0 +1,748 @@
+{
+  "terms": {
+    "0d32af41": {
+      "id": "0d32af41",
+      "arabic_term": "فيلترو زيت",
+      "standard_category": "Engine",
+      "english_term": "Engine Oil Filter",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "2b590c5d": {
+      "id": "2b590c5d",
+      "arabic_term": "كوليتوري",
+      "standard_category": "Engine",
+      "english_term": "Exhaust Manifold",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "388e8163": {
+      "id": "388e8163",
+      "arabic_term": "تيربو",
+      "standard_category": "Engine",
+      "english_term": "Turbo Charger",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "2d9ffe63": {
+      "id": "2d9ffe63",
+      "arabic_term": "تستاتا",
+      "standard_category": "Engine",
+      "english_term": "Cylinder Head",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "9547af1f": {
+      "id": "9547af1f",
+      "arabic_term": "جبة",
+      "standard_category": "Engine",
+      "english_term": "Cylinder Block",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "f4dec22a": {
+      "id": "f4dec22a",
+      "arabic_term": "بسطوني",
+      "standard_category": "Engine",
+      "english_term": "Pistons",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "23c6eb90": {
+      "id": "23c6eb90",
+      "arabic_term": "شنابر",
+      "standard_category": "Engine",
+      "english_term": "Piston Rings",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "f1fa2bcf": {
+      "id": "f1fa2bcf",
+      "arabic_term": "بيـلا",
+      "standard_category": "Engine",
+      "english_term": "Connecting Rod",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "a444fc7e": {
+      "id": "a444fc7e",
+      "arabic_term": "برنزيني",
+      "standard_category": "Engine",
+      "english_term": "Engine Bearings",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "7bfcb2bc": {
+      "id": "7bfcb2bc",
+      "arabic_term": "كولوا",
+      "standard_category": "Engine",
+      "english_term": "Crankshaft",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "6a5289c5": {
+      "id": "6a5289c5",
+      "arabic_term": "امبروكم",
+      "standard_category": "Engine",
+      "english_term": "Camshaft",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "b232af5d": {
+      "id": "b232af5d",
+      "arabic_term": "فولانو",
+      "standard_category": "Engine",
+      "english_term": "Flywheel",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "452ba126": {
+      "id": "452ba126",
+      "arabic_term": "قرنسيوني",
+      "standard_category": "Engine",
+      "english_term": "Gasket Set / Head Gasket",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "bf9fdba7": {
+      "id": "bf9fdba7",
+      "arabic_term": "باراول ِ ي",
+      "standard_category": "Engine",
+      "english_term": "Oil Seals",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "7d0d292d": {
+      "id": "7d0d292d",
+      "arabic_term": "سبانوتي",
+      "standard_category": "Engine",
+      "english_term": "Wrist Pin",
+      "created_at": "2026-05-16T08:44:14.899613+00:00"
+    },
+    "61e65c43": {
+      "id": "61e65c43",
+      "arabic_term": "تكهيات",
+      "standard_category": "Engine",
+      "english_term": "Tappets / Valve Lifters",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "aabd4d85": {
+      "id": "aabd4d85",
+      "arabic_term": "مثلث",
+      "standard_category": "Engine",
+      "english_term": "Water Flange",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "7cc904e9": {
+      "id": "7cc904e9",
+      "arabic_term": "كتينا سيبراتسيوني",
+      "standard_category": "Engine",
+      "english_term": "Timing Chain / Belt",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "28693119": {
+      "id": "28693119",
+      "arabic_term": "كاردان / عمود الكردان",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Propeller Shaft / Drive Shaft",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "3811edf9": {
+      "id": "3811edf9",
+      "arabic_term": "بوشي",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Differential Assy",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "66099b13": {
+      "id": "66099b13",
+      "arabic_term": "مارشا",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Gear Shift Lever",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "f2e62b59": {
+      "id": "f2e62b59",
+      "arabic_term": "كامبيو",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Gearbox / Transmission",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "967758c7": {
+      "id": "967758c7",
+      "arabic_term": "فرسيوني",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Clutch System",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "766f2a44": {
+      "id": "766f2a44",
+      "arabic_term": "ديسكو",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Clutch Disc",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "f12c3b5a": {
+      "id": "f12c3b5a",
+      "arabic_term": "بلاطو",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Pressure Plate",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "bbe6949e": {
+      "id": "bbe6949e",
+      "arabic_term": "كوشينيتي",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Release Bearing",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "292f3b11": {
+      "id": "292f3b11",
+      "arabic_term": "سمياص",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "Axle Shaft / CV Joint",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "93254c29": {
+      "id": "93254c29",
+      "arabic_term": "كوفية",
+      "standard_category": "Transmission & Drivetrain",
+      "english_term": "CV Boot",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "8da41ea0": {
+      "id": "8da41ea0",
+      "arabic_term": "بومبة ستيرسو",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Power Steering Pump",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "07b871e3": {
+      "id": "07b871e3",
+      "arabic_term": "باليسترا",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Leaf Spring",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "6aa4b52e": {
+      "id": "6aa4b52e",
+      "arabic_term": "ستيرسو",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Steering Wheel",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "acd3a71f": {
+      "id": "acd3a71f",
+      "arabic_term": "سكاتلة",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Steering Rack",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "60fc5052": {
+      "id": "60fc5052",
+      "arabic_term": "مزطوري",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Shock Absorbers",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "bc8c3b04": {
+      "id": "bc8c3b04",
+      "arabic_term": "ياي / مولا",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Coil Springs",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "feab76e8": {
+      "id": "feab76e8",
+      "arabic_term": "براتشو",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Control Arm",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "3fbe7c98": {
+      "id": "3fbe7c98",
+      "arabic_term": "موتسو",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Wheel Hub",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "0f4910a6": {
+      "id": "0f4910a6",
+      "arabic_term": "فازيلي",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Ball Joint",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "07985377": {
+      "id": "07985377",
+      "arabic_term": "نوتشي",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Tie Rod End",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "2e214e0c": {
+      "id": "2e214e0c",
+      "arabic_term": "مسمار ميزان",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Stabilizer Link / Sway Bar Link",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "8abed4a9": {
+      "id": "8abed4a9",
+      "arabic_term": "قوميني",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Rubber Bushings",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "fdb3f9f2": {
+      "id": "fdb3f9f2",
+      "arabic_term": "نجمة",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Flexible Steering Coupler",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "fc4f2f3a": {
+      "id": "fc4f2f3a",
+      "arabic_term": "سراويل",
+      "standard_category": "Suspension & Steering",
+      "english_term": "Undercarriage / Chassis",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "6d70d563": {
+      "id": "6d70d563",
+      "arabic_term": "بومبة فرينو",
+      "standard_category": "Brakes",
+      "english_term": "Brake Master Cylinder",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "a2546c8e": {
+      "id": "a2546c8e",
+      "arabic_term": "توبو فرينو",
+      "standard_category": "Brakes",
+      "english_term": "Brake Hose / Tube",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "6c7a2a07": {
+      "id": "6c7a2a07",
+      "arabic_term": "طمبور",
+      "standard_category": "Brakes",
+      "english_term": "Brake Drum",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "a62e9b81": {
+      "id": "a62e9b81",
+      "arabic_term": "فرينو ماني",
+      "standard_category": "Brakes",
+      "english_term": "Handbrake",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "801ea74e": {
+      "id": "801ea74e",
+      "arabic_term": "خيط فرينو",
+      "standard_category": "Brakes",
+      "english_term": "Handbrake Cable",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "24c481c9": {
+      "id": "24c481c9",
+      "arabic_term": "سكاتلة فيوزات",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Fuse Box / Board",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "6c3d12e4": {
+      "id": "6c3d12e4",
+      "arabic_term": "دينمو",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Alternator",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "1fc41177": {
+      "id": "1fc41177",
+      "arabic_term": "موتورينو",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Starter Motor",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "51952fb9": {
+      "id": "51952fb9",
+      "arabic_term": "بونبينة",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Ignition Coil",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "50d8cfe6": {
+      "id": "50d8cfe6",
+      "arabic_term": "شماعي",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Spark Plugs",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "042a99a3": {
+      "id": "042a99a3",
+      "arabic_term": "مورسيتي",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Battery Terminals",
+      "created_at": "2026-05-16T08:44:14.900615+00:00"
+    },
+    "098c6c68": {
+      "id": "098c6c68",
+      "arabic_term": "شريط إيرباق",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Clock Spring",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "8258afe6": {
+      "id": "8258afe6",
+      "arabic_term": "فيوزات",
+      "standard_category": "Electrical & Sensors",
+      "english_term": "Fuses",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "6cc77ac4": {
+      "id": "6cc77ac4",
+      "arabic_term": "كمبريسوري",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "A / C Compressor",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "3f54bcf7": {
+      "id": "3f54bcf7",
+      "arabic_term": "كندنساتوري",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Condenser Assy",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "9ac61df2": {
+      "id": "9ac61df2",
+      "arabic_term": "سرباتويو",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Fuel Tank",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "4a6222b9": {
+      "id": "4a6222b9",
+      "arabic_term": "توبو راداتوري",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Radiator Upper / Lower Hoses",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "4464301b": {
+      "id": "4464301b",
+      "arabic_term": "راداتوري",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Radiator",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "f662d108": {
+      "id": "f662d108",
+      "arabic_term": "بومبة ميه",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Water Pump",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "acdc0f7a": {
+      "id": "acdc0f7a",
+      "arabic_term": "قربة",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Expansion Tank / Reservoir",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "1415b9a4": {
+      "id": "1415b9a4",
+      "arabic_term": "ترموستات",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Thermostat",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "65714ac8": {
+      "id": "65714ac8",
+      "arabic_term": "ليفلو",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Oil Dipstick",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "ce980477": {
+      "id": "ce980477",
+      "arabic_term": "ستاقوبة",
+      "standard_category": "Cooling , Fluids & Air Conditioning",
+      "english_term": "Oil Sump / Oil Pan",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "4b5d4caa": {
+      "id": "4b5d4caa",
+      "arabic_term": "شنتورة",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Seat Belt Assy",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "f6008f69": {
+      "id": "f6008f69",
+      "arabic_term": "موتورينو مساحات",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Linkage",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "7df54256": {
+      "id": "7df54256",
+      "arabic_term": "كبوت",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Hood / Bonnet / Engine Cover",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "a6bab4a4": {
+      "id": "a6bab4a4",
+      "arabic_term": "باراوانطي",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Bumper",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "87d1975c": {
+      "id": "87d1975c",
+      "arabic_term": "رفرف",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Fender / Wing",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "1c18df04": {
+      "id": "1c18df04",
+      "arabic_term": "ماسكرينة",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Front Grille",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "c72f48f6": {
+      "id": "c72f48f6",
+      "arabic_term": "فنار",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Headlight",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "0bd7a811": {
+      "id": "0bd7a811",
+      "arabic_term": "مراية",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Side Mirror",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "d1614c8b": {
+      "id": "d1614c8b",
+      "arabic_term": "مانيليا",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Door Handle",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "17032ade": {
+      "id": "17032ade",
+      "arabic_term": "مساحات",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Wipers",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "1b3432fc": {
+      "id": "1b3432fc",
+      "arabic_term": "عجلة / ديسكو",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Rims / Wheels",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "53f54f7c": {
+      "id": "53f54f7c",
+      "arabic_term": "شكمان / مرميطة",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Exhaust Muffler",
+      "created_at": "2026-05-16T08:44:14.901629+00:00"
+    },
+    "c7f8f461": {
+      "id": "c7f8f461",
+      "arabic_term": "مرش",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Windshield",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "030023ec": {
+      "id": "030023ec",
+      "arabic_term": "طبلون",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Dashboard",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "1520ce59": {
+      "id": "1520ce59",
+      "arabic_term": "كوادرو",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Instrument Cluster",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "617e72a3": {
+      "id": "617e72a3",
+      "arabic_term": "كرسي",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Car Seat",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "0404ee02": {
+      "id": "0404ee02",
+      "arabic_term": "تبيزيريا",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Upholstery",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "0d90111f": {
+      "id": "0d90111f",
+      "arabic_term": "زجاج / مرش",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Glass / Windows",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "425151b2": {
+      "id": "425151b2",
+      "arabic_term": "سنتر لوك",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Door Lock Mechanism",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "bc5a0a6f": {
+      "id": "bc5a0a6f",
+      "arabic_term": "الزافيترو",
+      "standard_category": "Body , Cabin & Accessories",
+      "english_term": "Window Regulator",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "e70179ea": {
+      "id": "e70179ea",
+      "arabic_term": "جهاز كشف",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Diagnostic Tool",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "f14f2520": {
+      "id": "f14f2520",
+      "arabic_term": "دوبيو قابينا",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Double Cab Truck",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "5d513151": {
+      "id": "5d513151",
+      "arabic_term": "أوطانطة / طانطة",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Heavy Truck / Transporter",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "9c3d470e": {
+      "id": "9c3d470e",
+      "arabic_term": "لاوادجو",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Car Wash Station",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "9e74d214": {
+      "id": "9e74d214",
+      "arabic_term": "سيمافرو",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Traffic Lights",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "3948fe0b": {
+      "id": "3948fe0b",
+      "arabic_term": "بركيدجو",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Parking Lot",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "7c038955": {
+      "id": "7c038955",
+      "arabic_term": "كاتشافيتي",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Screwdriver",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "8c95b4f9": {
+      "id": "8c95b4f9",
+      "arabic_term": "بينسة",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Pliers",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "d348c06e": {
+      "id": "d348c06e",
+      "arabic_term": "مفتاح انجليزي",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Wrench / Spanner",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "e8245df2": {
+      "id": "e8245df2",
+      "arabic_term": "قادوما",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Hammer",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "bb234c54": {
+      "id": "bb234c54",
+      "arabic_term": "مورصة",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Vise / Clamp",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "8010dcc0": {
+      "id": "8010dcc0",
+      "arabic_term": "ترابنو",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Drill",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "e14258d1": {
+      "id": "e14258d1",
+      "arabic_term": "كريك",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Car Jack",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "9dc514ab": {
+      "id": "9dc514ab",
+      "arabic_term": "مفتاح كريك",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Wheel / Lug Wrench",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "70228e63": {
+      "id": "70228e63",
+      "arabic_term": "قومة / ق ُ وم ّّ ا",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Tire",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "2cea6870": {
+      "id": "2cea6870",
+      "arabic_term": "شكورتا",
+      "standard_category": "Diagnostic Tools , Types & General Terminology",
+      "english_term": "Spare Tire",
+      "created_at": "2026-05-16T08:44:14.902628+00:00"
+    },
+    "6d5a19b6": {
+      "id": "6d5a19b6",
+      "arabic_term": "باطني",
+      "standard_category": "Brakes",
+      "english_term": "Brake Pads",
+      "created_at": "2026-05-16T08:46:02.511981+00:00"
+    },
+    "3b839dc6": {
+      "id": "3b839dc6",
+      "arabic_term": "فرامل_اختبار",
+      "standard_category": "Brakes",
+      "english_term": "",
+      "created_at": "2026-05-16T08:46:02.523519+00:00"
+    },
+    "74df02ee": {
+      "id": "74df02ee",
+      "arabic_term": "محرك_بحث",
+      "standard_category": "Engine",
+      "english_term": "",
+      "created_at": "2026-05-16T08:46:02.540338+00:00"
+    },
+    "746c31c5": {
+      "id": "746c31c5",
+      "arabic_term": "باطني",
+      "standard_category": "Brakes",
+      "english_term": "Disc Brake Pads",
+      "created_at": "2026-05-16T08:46:02.556478+00:00",
+      "updated_at": "2026-05-16T08:46:02.564301+00:00"
+    },
+    "f730ee26": {
+      "id": "f730ee26",
+      "arabic_term": "طرمبة_ماء",
+      "standard_category": "Cooling",
+      "english_term": "Water Pump",
+      "created_at": "2026-05-16T08:46:03.326875+00:00"
+    }
+  },
+  "pending": {}
+}
