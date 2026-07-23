@@ -894,35 +894,6 @@
       "fusha_meaning": "تيل الفرامل (فحمات الفرامل القرصية)",
       "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
-    "3b839dc6": {
-      "id": "3b839dc6",
-      "arabic_term": "فرامل_اختبار",
-      "standard_category": "Brakes",
-      "english_term": "",
-      "created_at": "2026-05-16T08:46:02.523519+00:00"
-    },
-    "74df02ee": {
-      "id": "74df02ee",
-      "arabic_term": "محرك_بحث",
-      "standard_category": "Engine",
-      "english_term": "",
-      "created_at": "2026-05-16T08:46:02.540338+00:00"
-    },
-    "746c31c5": {
-      "id": "746c31c5",
-      "arabic_term": "باطني",
-      "standard_category": "Brakes",
-      "english_term": "Disc Brake Pads",
-      "created_at": "2026-05-16T08:46:02.556478+00:00",
-      "updated_at": "2026-05-16T08:46:02.564301+00:00"
-    },
-    "f730ee26": {
-      "id": "f730ee26",
-      "arabic_term": "طرمبة_ماء",
-      "standard_category": "Cooling",
-      "english_term": "Water Pump",
-      "created_at": "2026-05-16T08:46:03.326875+00:00"
-    },
     "d8e2aca5": {
       "id": "d8e2aca5",
       "arabic_term": "اليد العاملة / يد عاملة",
@@ -2489,52 +2460,6 @@
       "fusha_meaning": "شاحنة نقل ثقيلة",
       "notes": "",
       "created_at": "2026-07-23T08:16:10.532329+00:00"
-    },
-    "317fea24": {
-      "id": "317fea24",
-      "arabic_term": "باطني",
-      "standard_category": "Brakes",
-      "english_term": "Brake Pads",
-      "fusha_meaning": "",
-      "notes": "",
-      "created_at": "2026-07-23T08:21:27.874208+00:00"
-    },
-    "0cd7a3c5": {
-      "id": "0cd7a3c5",
-      "arabic_term": "فرامل_اختبار",
-      "standard_category": "Brakes",
-      "english_term": "",
-      "fusha_meaning": "",
-      "notes": "",
-      "created_at": "2026-07-23T08:21:27.903928+00:00"
-    },
-    "92103fbc": {
-      "id": "92103fbc",
-      "arabic_term": "محرك_بحث",
-      "standard_category": "Engine",
-      "english_term": "",
-      "fusha_meaning": "",
-      "notes": "",
-      "created_at": "2026-07-23T08:21:27.930264+00:00"
-    },
-    "03bb8ec9": {
-      "id": "03bb8ec9",
-      "arabic_term": "باطني",
-      "standard_category": "Brakes",
-      "english_term": "Disc Brake Pads",
-      "fusha_meaning": "",
-      "notes": "",
-      "created_at": "2026-07-23T08:21:27.949165+00:00",
-      "updated_at": "2026-07-23T08:21:27.961878+00:00"
-    },
-    "96227db7": {
-      "id": "96227db7",
-      "arabic_term": "طرمبة_ماء",
-      "standard_category": "Cooling",
-      "english_term": "Water Pump",
-      "fusha_meaning": "",
-      "notes": "",
-      "created_at": "2026-07-23T08:21:39.783664+00:00"
     }
   },
   "pending": {
