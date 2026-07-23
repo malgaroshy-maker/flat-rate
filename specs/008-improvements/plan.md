@@ -12,7 +12,7 @@
 | C — Chat UX overhaul | ✅ Core done (stop/retry/copy/suggestions); C7 session search still open |
 | D — Visual redesign | ◐ Dark mode + Arabic typography + theme-aware screens done; micro-interactions (D4) and full screen-by-screen polish (D3) not done |
 | E — Offline resilience | ✅ E1–E3 done (dictionary/search cache, chat outbox); E4–E6 (voice input, quick-estimate form, PDF from phone) not started |
-| F — Deploy/ops hardening | Not started |
+| F — Deploy/ops hardening | ✅ Done and verified live (F2 partial — no multi-stage build) |
 | G — Signed release APK | ✅ Build/signing done, v1.0.0 delivered; needs a real on-device smoke test + in-app update check (blocked on F4) |
 
 ---
@@ -100,12 +100,12 @@
 
 **Goal: every backend change ships to Render immediately; the deployment itself gets faster, leaner, and observable.**
 
-- [ ] F1. **Deploy pipeline**: auto-deploy on push to `master` (Render GitHub integration); document the flow in `docs/deployment.md` so a backend phase isn't "done" until it's live and verified via `/health`.
-- [ ] F2. **Slim the Docker image** for faster cold starts: multi-stage build, prune build deps and unused packages (PDF/docx libs lazy-imported per A4), tighten `.dockerignore` (exclude `venv/`, `chroma_db_upload.zip`, `flutter_app/`, `video/`). Target: measurably faster boot on Render's free instance.
-- [ ] F3. **ChromaDB in the image**: keep baking `backend/chroma_db/` into the image (read-only at runtime) since Render free has an ephemeral disk; add a startup integrity check (collection count logged) so a bad build fails loudly, not with empty RAG results.
-- [ ] F4. **Config hygiene**: all secrets (GEMINI_API_KEY) and toggles via Render env vars only; add a `/api/version` endpoint returning git SHA + build date so the app and you can confirm what's live.
-- [ ] F5. **Observability**: structured logging (request timing, RAG hit counts, Gemini latency, cold-start duration), and Render health-check path set to `/health` so failed deploys roll back instead of serving errors.
-- [ ] F6. **Post-deploy smoke test**: tiny script (`scripts/smoke_prod.py`) hitting `/health`, one `/api/query`, and one streamed `/api/chat/send` against the live URL after each deploy.
+- [x] F1. Auto-deploy on push to `master` confirmed working (every phase this session deployed this way); documented in `docs/deployment.md`.
+- [~] F2. `.dockerignore` tightened (added `scripts/`, root `.dockerignore` itself was never committed until now); the image already avoided PyTorch/sentence-transformers bloat via `Dockerfile.render`'s cloud-only dependency list. No multi-stage build — not attempted, current image boots fine.
+- [x] F3. Startup integrity check added: `render_start.py` opens the collection and hard-exits if it's 0 records. Also fixed a real latent bug found along the way — `CHROMA_PERSIST_DIR`'s default computation resolves to the wrong path inside the flattened Docker image; production was silently depending on a dashboard-only env var to paper over it. Now pinned explicitly in code.
+- [x] F4. `/api/version` added (git commit via Render's auto-set `RENDER_GIT_COMMIT`, no build-time injection needed).
+- [x] F5. Structured logging added (`rag_search`/`llm_stream` lines with timing/hit-count/similarity) and verified they actually appear. `healthCheckPath: /api/health` added to `render.yaml` so a failed health check rolls back instead of going live broken.
+- [x] F6. `scripts/smoke_prod.py` built and run against production — health, version, query routing, and a real streamed chat request all pass.
 
 ## Phase G — Release engineering (APK sideload)
 
