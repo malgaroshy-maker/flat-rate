@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/services/connectivity_service.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../shared/widgets/common_widgets.dart';
@@ -125,6 +126,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           itemBuilder: (_, i) => _ChatBubble(
             msg: msgs[i],
             onRetry: () => ref.read(chatProvider.notifier).retryLast(),
+            onRetryWithKey: (message) =>
+                ref.read(chatProvider.notifier).retryWithSavedKey(message),
           ),
         );
       },
@@ -220,7 +223,8 @@ class _EmptyState extends StatelessWidget {
 class _ChatBubble extends StatelessWidget {
   final ChatMessage msg;
   final VoidCallback onRetry;
-  const _ChatBubble({required this.msg, required this.onRetry});
+  final ValueChanged<String> onRetryWithKey;
+  const _ChatBubble({required this.msg, required this.onRetry, required this.onRetryWithKey});
 
   void _copy(BuildContext context) {
     Clipboard.setData(ClipboardData(text: msg.content));
@@ -234,6 +238,62 @@ class _ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+
+    if (msg.role == 'key_needed' || msg.role == 'key_needed_retry_failed') {
+      final isRetryFailed = msg.role == 'key_needed_retry_failed';
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(12),
+          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.85),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.tertiaryContainer,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.vpn_key_outlined, size: 18, color: theme.colorScheme.onTertiaryContainer),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      isRetryFailed ? l10n.keyNeededRetryFailedTitle : l10n.keyNeededTitle,
+                      style: TextStyle(
+                          color: theme.colorScheme.onTertiaryContainer, fontSize: 13, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 4),
+              Text(
+                isRetryFailed ? l10n.keyNeededRetryFailedBody : l10n.keyNeededBody,
+                style: TextStyle(color: theme.colorScheme.onTertiaryContainer, fontSize: 12),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextButton(
+                    onPressed: () => context.push('/settings'),
+                    child: Text(l10n.goToSettings, style: const TextStyle(fontSize: 12)),
+                  ),
+                  const SizedBox(width: 4),
+                  FilledButton.tonal(
+                    onPressed: () => onRetryWithKey(msg.content),
+                    child: Text(l10n.retryWithKey, style: const TextStyle(fontSize: 12)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    }
 
     if (msg.role == 'queued') {
       return Align(

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/services/api_key_service.dart';
 import '../../../core/services/local_db.dart';
 import '../data/chat_repository.dart';
 import '../domain/chat_models.dart';
@@ -39,6 +40,7 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
   StreamSubscription<String>? _subscription;
   String _fullResponse = '';
   List<ChatMessage> _msgsBeforeSend = [];
+  bool _keyErrorHandled = false;
 
   ChatNotifier(this._repo, this._ref) : super(const AsyncValue.data([]));
 
@@ -84,9 +86,16 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
     state = AsyncValue.data(messages);
   }
 
-  void send(String message, {String lang = 'ar', bool persistUserMessage = true}) {
+  void send(
+    String message, {
+    String lang = 'ar',
+    bool persistUserMessage = true,
+    String? geminiApiKeyOverride,
+    bool isKeyRetry = false,
+  }) {
     _subscription?.cancel();
     _fullResponse = '';
+    _keyErrorHandled = false;
     _ref.read(chatStatusProvider.notifier).state = null;
     final msgs = <ChatMessage>[...(state.valueOrNull ?? [])];
     _msgsBeforeSend = msgs;
@@ -115,6 +124,7 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
       sessionId: _sessionId,
       lang: lang,
       history: historyJson,
+      geminiApiKey: geminiApiKeyOverride,
     );
 
     final buffer = StringBuffer();
@@ -128,6 +138,13 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
         if (data.startsWith(statusEventPrefix)) {
           _ref.read(chatStatusProvider.notifier).state =
               data.substring(statusEventPrefix.length);
+          return;
+        }
+        if (data.startsWith(errorTypeEventPrefix)) {
+          final errorType = data.substring(errorTypeEventPrefix.length);
+          if (errorType == 'gemini_key_error') {
+            _handleKeyError(message, lang, msgs, alreadyRetried: isKeyRetry);
+          }
           return;
         }
         _ref.read(chatStatusProvider.notifier).state = null;
@@ -160,7 +177,10 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
       },
       onDone: () {
         _ref.read(chatStatusProvider.notifier).state = null;
-        if (buffer.isEmpty) {
+        // A key-error retry (or the "add your key" prompt) already set
+        // state to something other than `msgs` — don't stomp on it just
+        // because no text token ever arrived on this particular stream.
+        if (buffer.isEmpty && !_keyErrorHandled) {
           state = AsyncValue.data(msgs);
         }
         // Persist assistant response locally
@@ -173,6 +193,41 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
         }
       },
     );
+  }
+
+  /// The shared/active key failed (invalid or out of quota). If the user
+  /// has a personal key saved, retry automatically with it; otherwise show
+  /// a bubble prompting them to add one, with the pending message/lang
+  /// captured so a follow-up retry can use it.
+  Future<void> _handleKeyError(
+    String message,
+    String lang,
+    List<ChatMessage> msgsBeforeThisSend, {
+    required bool alreadyRetried,
+  }) async {
+    final savedKey = alreadyRetried ? null : await _ref.read(apiKeyServiceProvider).getKey();
+    _keyErrorHandled = true;
+
+    if (savedKey != null) {
+      send(message, lang: lang, persistUserMessage: false, geminiApiKeyOverride: savedKey, isKeyRetry: true);
+      return;
+    }
+
+    state = AsyncValue.data([
+      ...msgsBeforeThisSend,
+      ChatMessage(role: alreadyRetried ? 'key_needed_retry_failed' : 'key_needed', content: message),
+    ]);
+  }
+
+  /// Retry a pending "key_needed" message once the user has saved a key
+  /// (called from the chat screen's prompt action).
+  void retryWithSavedKey(String message, {String lang = 'ar'}) {
+    final msgs = state.valueOrNull;
+    if (msgs == null) return;
+    final cleaned = List<ChatMessage>.from(msgs)
+      ..removeWhere((m) => m.role == 'key_needed' || m.role == 'key_needed_retry_failed');
+    state = AsyncValue.data(cleaned);
+    _handleKeyError(message, lang, cleaned, alreadyRetried: false);
   }
 
   void cancel() {

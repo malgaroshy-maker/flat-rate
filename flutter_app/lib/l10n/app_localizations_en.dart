@@ -229,6 +229,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notesOptional => 'Notes (optional)';
 
   @override
+  String get keyNeededTitle =>
+      'The shared key isn\'t available right now (quota exceeded or invalid)';
+
+  @override
+  String get keyNeededBody =>
+      'Add your own Gemini API key (free) in Settings to keep chatting';
+
+  @override
+  String get keyNeededRetryFailedTitle => 'Your saved key failed too';
+
+  @override
+  String get keyNeededRetryFailedBody =>
+      'Check that it\'s valid in Settings, then retry';
+
+  @override
+  String get goToSettings => 'Settings';
+
+  @override
+  String get retryWithKey => 'Retry';
+
+  @override
+  String get personalApiKeyLabel => 'Personal Gemini API Key (fallback)';
+
+  @override
+  String get personalApiKeyHint =>
+      'Only used when the shared key runs out of quota';
+
+  @override
+  String get personalApiKeySaved => 'Saved';
+
+  @override
+  String get personalApiKeyGetOne => 'Get a free key from Google AI Studio';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get personalApiKeyStatus => 'Status';
+
+  @override
+  String get personalApiKeyPresent => 'Saved';
+
+  @override
+  String get personalApiKeyAbsent => 'Not saved';
+
+  @override
+  String get aboutTitle => 'About';
+
+  @override
+  String get aboutAppBody =>
+      'An AI assistant for estimating labor hours in automotive workshops, built on real historical data from a service center in Tajura, benchmarked against international standards, with full support for Libyan dialect automotive terminology.';
+
+  @override
+  String get developedByLabel => 'Developed by';
+
+  @override
+  String get developerBio =>
+      'Electrical engineer and software developer who worked as a service advisor at an automotive service center in Tajura, and built this system from that hands-on experience.';
+
+  @override
+  String get appVersionLabel => 'Version';
+
+  @override
   String get cachedDataBanner => 'Offline — showing cached data';
 
   @override

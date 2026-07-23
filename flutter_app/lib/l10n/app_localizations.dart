@@ -524,6 +524,120 @@ abstract class AppLocalizations {
   /// **'Notes (optional)'**
   String get notesOptional;
 
+  /// No description provided for @keyNeededTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The shared key isn\'t available right now (quota exceeded or invalid)'**
+  String get keyNeededTitle;
+
+  /// No description provided for @keyNeededBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your own Gemini API key (free) in Settings to keep chatting'**
+  String get keyNeededBody;
+
+  /// No description provided for @keyNeededRetryFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your saved key failed too'**
+  String get keyNeededRetryFailedTitle;
+
+  /// No description provided for @keyNeededRetryFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Check that it\'s valid in Settings, then retry'**
+  String get keyNeededRetryFailedBody;
+
+  /// No description provided for @goToSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get goToSettings;
+
+  /// No description provided for @retryWithKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retryWithKey;
+
+  /// No description provided for @personalApiKeyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Gemini API Key (fallback)'**
+  String get personalApiKeyLabel;
+
+  /// No description provided for @personalApiKeyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Only used when the shared key runs out of quota'**
+  String get personalApiKeyHint;
+
+  /// No description provided for @personalApiKeySaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get personalApiKeySaved;
+
+  /// No description provided for @personalApiKeyGetOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Get a free key from Google AI Studio'**
+  String get personalApiKeyGetOne;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @personalApiKeyStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get personalApiKeyStatus;
+
+  /// No description provided for @personalApiKeyPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get personalApiKeyPresent;
+
+  /// No description provided for @personalApiKeyAbsent.
+  ///
+  /// In en, this message translates to:
+  /// **'Not saved'**
+  String get personalApiKeyAbsent;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get aboutTitle;
+
+  /// No description provided for @aboutAppBody.
+  ///
+  /// In en, this message translates to:
+  /// **'An AI assistant for estimating labor hours in automotive workshops, built on real historical data from a service center in Tajura, benchmarked against international standards, with full support for Libyan dialect automotive terminology.'**
+  String get aboutAppBody;
+
+  /// No description provided for @developedByLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Developed by'**
+  String get developedByLabel;
+
+  /// No description provided for @developerBio.
+  ///
+  /// In en, this message translates to:
+  /// **'Electrical engineer and software developer who worked as a service advisor at an automotive service center in Tajura, and built this system from that hands-on experience.'**
+  String get developerBio;
+
+  /// No description provided for @appVersionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get appVersionLabel;
+
   /// No description provided for @cachedDataBanner.
   ///
   /// In en, this message translates to:

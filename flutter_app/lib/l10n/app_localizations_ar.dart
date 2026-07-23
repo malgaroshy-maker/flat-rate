@@ -228,6 +228,68 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notesOptional => 'ملاحظات (اختياري)';
 
   @override
+  String get keyNeededTitle =>
+      'المفتاح المشترك غير متاح حالياً (انتهت الحصة أو غير صالح)';
+
+  @override
+  String get keyNeededBody =>
+      'أضف مفتاح Gemini API الخاص بك (مجاني) في الإعدادات لمواصلة المحادثة';
+
+  @override
+  String get keyNeededRetryFailedTitle => 'مفتاحك المحفوظ فشل أيضاً';
+
+  @override
+  String get keyNeededRetryFailedBody =>
+      'تحقق من صلاحية المفتاح في الإعدادات ثم أعد المحاولة';
+
+  @override
+  String get goToSettings => 'الإعدادات';
+
+  @override
+  String get retryWithKey => 'أعد المحاولة';
+
+  @override
+  String get personalApiKeyLabel => 'مفتاح Gemini API الشخصي (احتياطي)';
+
+  @override
+  String get personalApiKeyHint => 'يُستخدم فقط عند انتهاء حصة المفتاح المشترك';
+
+  @override
+  String get personalApiKeySaved => 'تم الحفظ';
+
+  @override
+  String get personalApiKeyGetOne => 'احصل على مفتاح مجاني من Google AI Studio';
+
+  @override
+  String get clear => 'مسح';
+
+  @override
+  String get personalApiKeyStatus => 'الحالة';
+
+  @override
+  String get personalApiKeyPresent => 'محفوظ';
+
+  @override
+  String get personalApiKeyAbsent => 'غير محفوظ';
+
+  @override
+  String get aboutTitle => 'حول التطبيق';
+
+  @override
+  String get aboutAppBody =>
+      'مساعد ذكي لتقدير ساعات العمل في ورش صيانة السيارات، يعتمد على تحليل بيانات تاريخية حقيقية من مركز صيانة بتاجوراء، مقارنةً بمعايير دولية، مع دعم كامل للهجة الليبية في مصطلحات السيارات.';
+
+  @override
+  String get developedByLabel => 'طُوّر بواسطة';
+
+  @override
+  String get developerBio =>
+      'مهندس كهرباء ومطوّر برمجيات، عمل لفترة كمستشار خدمة في مركز صيانة سيارات بتاجوراء، وصمم هذا النظام بالاعتماد على خبرته العملية هناك.';
+
+  @override
+  String get appVersionLabel => 'الإصدار';
+
+  @override
   String get cachedDataBanner => 'غير متصل — بيانات محفوظة مسبقاً';
 
   @override

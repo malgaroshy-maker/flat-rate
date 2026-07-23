@@ -11,12 +11,14 @@ import '../domain/chat_models.dart';
 /// number.
 const String sessionIdEventPrefix = '__session_id:';
 const String statusEventPrefix = '__status:';
+const String errorTypeEventPrefix = '__error_type:';
 
 class ChatRepository {
   final Dio _dio = ApiClient().dio;
   CancelToken? _cancelToken;
   static const String _sessionIdPrefix = sessionIdEventPrefix;
   static const String _statusPrefix = statusEventPrefix;
+  static const String _errorTypePrefix = errorTypeEventPrefix;
 
   /// Server-side sessions (may be empty on ephemeral Render).
   Future<List<ChatSession>> getSessions() async {
@@ -44,11 +46,16 @@ class ChatRepository {
   }
 
   /// Send message with optional client-provided history for stateless backends.
+  ///
+  /// [geminiApiKey]: an optional personal Gemini key the backend should use
+  /// for this request only, instead of the app's shared key — sent when
+  /// retrying after a `gemini_key_error` signal. Never stored server-side.
   Stream<String> sendMessage(
     String message, {
     String? sessionId,
     String lang = 'ar',
     String? history,
+    String? geminiApiKey,
   }) {
     _cancelToken?.cancel();
     _cancelToken = CancelToken();
@@ -60,6 +67,7 @@ class ChatRepository {
     };
     if (sessionId != null) params['session_id'] = sessionId;
     if (history != null && history.isNotEmpty) params['history'] = history;
+    if (geminiApiKey != null && geminiApiKey.isNotEmpty) params['gemini_api_key'] = geminiApiKey;
 
     () async {
       try {
@@ -94,6 +102,8 @@ class ChatRepository {
                   controller.add('$_sessionIdPrefix${json['session_id']}');
                 } else if (json.containsKey('status')) {
                   controller.add('$_statusPrefix${json['status']}');
+                } else if (json.containsKey('error_type')) {
+                  controller.add('$_errorTypePrefix${json['error_type']}');
                 } else if (json.containsKey('text')) {
                   controller.add(json['text'] as String);
                 }
