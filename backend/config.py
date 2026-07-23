@@ -17,7 +17,7 @@ class Settings:
     FORCE_LOCAL: bool = os.getenv("FORCE_LOCAL", "").lower() in ("1", "true", "yes")
 
     # --- Cloud model names ---
-    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+    GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
     GEMINI_EMBEDDING_MODEL: str = os.getenv(
         "GEMINI_EMBEDDING_MODEL", "gemini-embedding-2"
     )

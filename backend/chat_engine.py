@@ -15,6 +15,15 @@ from system_prompt import build_system_prompt, format_rag_context
 
 logger = logging.getLogger("chat_engine")
 
+# Embedding similarity below this is not a real match — it's just whatever
+# ChromaDB's nearest-neighbor search returns for *any* query, including
+# greetings and small talk. Calibrated against real traffic: genuine labor
+# queries score ~0.80-0.83, greetings/small-talk score ~0.60-0.66. Below
+# this, the hits are noise and must not be fed to the model as if they were
+# candidate matches — the model would otherwise dutifully apply the
+# "always cite record counts and ranges" rule to irrelevant records.
+RELEVANCE_THRESHOLD = 0.72
+
 
 async def stream_chat_response(
     message: str,
@@ -39,12 +48,19 @@ async def stream_chat_response(
     rag_ms = (time.perf_counter() - t0) * 1000
     hits = query_result.get("hits", [])
     matched_terms = query_result.get("matched_terms", [])
-    rag_context = format_rag_context(hits, matched_terms, lang)
 
     top_sim = hits[0]["similarity"] if hits else 0.0
+    # A dictionary term match (exact substring, not embedding distance) is a
+    # stronger relevance signal than a mediocre embedding score — keep the
+    # hits if either condition holds so a real but rare operation isn't
+    # dropped just because the embedding search alone came in under threshold.
+    is_relevant = top_sim >= RELEVANCE_THRESHOLD or bool(matched_terms)
+    relevant_hits = hits if is_relevant else []
+    rag_context = format_rag_context(relevant_hits, matched_terms, lang)
+
     logger.info(
-        "rag_search session=%s hits=%d matched_terms=%d top_similarity=%.3f elapsed_ms=%.1f",
-        session_id, len(hits), len(matched_terms), top_sim, rag_ms,
+        "rag_search session=%s hits=%d relevant=%s matched_terms=%d top_similarity=%.3f elapsed_ms=%.1f",
+        session_id, len(hits), is_relevant, len(matched_terms), top_sim, rag_ms,
     )
 
     # 2. Build system prompt
@@ -52,21 +68,35 @@ async def stream_chat_response(
 
     yield {"status": "thinking"}
 
-    # 3. Build the user message
+    # 3. Build the user message. The estimation rules (ranges, record counts,
+    # the emoji-sectioned format) only apply when this is actually a labor/
+    # maintenance question — retrieved_relevant tells the model whether the
+    # RAG context below is real candidate data or genuinely irrelevant, so it
+    # doesn't force-fit the data-analysis persona onto a greeting.
+    if not is_relevant:
+        retrieval_note = (
+            "No relevant historical labor data was found for this message — "
+            "it does not appear to describe a specific maintenance/repair job."
+        )
+    else:
+        retrieval_note = "Relevant historical labor data was found below."
+
     if history_messages:
         user_content = f"""{rag_context}Latest message from user: {message}
 
-You are in an ongoing conversation. Use the conversation history above to understand the full scope of the user's request. The user's previous messages and your previous responses contain all the vehicle details, job scope, and estimates already discussed. Do NOT treat this as a new query — this is a follow-up message.
+{retrieval_note}
 
-Based on the full conversation context, provide a helpful response. Remember: always give hour ranges (P10-P90), mention record counts, and ask clarifying questions if needed."""
+You are in an ongoing conversation. Use the conversation history above to understand the full scope of the user's request — the user's previous messages and your previous responses contain any vehicle details, job scope, and estimates already discussed. Do NOT treat this as a new query if it's a follow-up.
+
+If this message (in light of the conversation) is asking for a labor estimate, follow the estimation rules: hour ranges, record counts, ask clarifying questions if needed. If it's a greeting, thanks, or general conversation, just respond naturally and briefly — do not mention records, ranges, or data at all."""
     else:
-        user_content = f"""User query: {message}
+        user_content = f"""User message: {message}
 
 {rag_context}
 
-Based on the historical data above, provide a useful estimate or answer.
-Remember: always give hour ranges (P10-P90), mention record counts,
-and ask clarifying questions if needed."""
+{retrieval_note}
+
+If this is a labor/maintenance estimate question, use the historical data above and follow the estimation rules: hour ranges (P10-P90), record counts, ask clarifying questions if needed. If it's a greeting, thanks, or general conversation unrelated to car maintenance, just respond naturally and briefly in the same language — do not mention records, ranges, or data at all."""
 
     # 4. Stream with multi-turn history
     t_llm_start = time.perf_counter()
