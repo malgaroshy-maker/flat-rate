@@ -172,6 +172,35 @@ curl https://flat-rate.onrender.com/api/health
 
 ---
 
+## Mobile app releases (Android APK sideload)
+
+The app is distributed as a signed APK sideloaded directly to the workshop team's devices — no Play Store.
+
+### The signing keystore
+
+`flutter_app/android/keystore/upload-keystore.jks` is the **upload key** — it's what proves every release build actually came from you. It is **not committed to git** (gitignored, along with `key.properties`), which means:
+
+- **Back it up somewhere durable** (password manager, private cloud folder) — if it's lost, there is no way to publish an update that Android will accept as "the same app" on devices that already have it installed. The only recovery is uninstalling and reinstalling on every device.
+- `flutter_app/android/key.properties` holds the store/key passwords in plain text, matching the keystore above. Treat it like a credential file — back it up alongside the keystore, never paste its contents anywhere public.
+- On a fresh clone (or a new machine) without `key.properties` present, `flutter build apk --release` still succeeds but silently falls back to the **debug** signing key (see `android/app/build.gradle.kts`) — that build is fine for local testing but must never be distributed to the team, since it can't be upgraded in place by a properly-signed build later.
+
+### Building a release
+
+```bash
+cd flutter_app
+flutter build apk --release --split-per-abi --dart-define=API_BASE_URL=https://flat-rate.onrender.com
+```
+
+Output lands in `flutter_app/build/app/outputs/flutter-apk/` — `--split-per-abi` produces separate smaller APKs per CPU architecture (`app-armeabi-v7a-release.apk`, `app-arm64-v8a-release.apk`, `app-x86_64-release.apk`); most modern phones are `arm64-v8a`.
+
+Before bumping a release, update the version in `flutter_app/pubspec.yaml` (`version: X.Y.Z+buildNumber`) — Android uses `buildNumber` to decide whether an APK you sideload counts as an upgrade over what's installed.
+
+### Installing on a device
+
+Transfer the relevant `app-<abi>-release.apk` to the phone (USB, or share via the workshop's usual method) and open it — the device needs "install unknown apps" allowed for whatever app is used to open the file (Settings → Apps → Special access → Install unknown apps).
+
+---
+
 ## Production hardening
 
 Before deploying to production:
