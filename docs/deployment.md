@@ -168,7 +168,31 @@ If workshop hours change, update the cron-job.org schedule's Hours/Days-of-week 
 
 ```bash
 curl https://flat-rate.onrender.com/api/health
+curl https://flat-rate.onrender.com/api/version   # git_commit — confirms *which* build is actually serving
 ```
+
+Or run the full smoke test (health, version, query routing, a real streamed chat request):
+
+```bash
+python scripts/smoke_prod.py
+```
+
+Render's health check is configured at `/api/health` (`render.yaml`'s `healthCheckPath`) — a deploy that fails its health check gets rolled back automatically instead of going live broken.
+
+### Reading production logs
+
+`main.py` configures Python's root logger at INFO level, and `chat_engine.py` logs one line per chat request for both stages:
+
+```
+rag_search session=<id> hits=<n> matched_terms=<n> top_similarity=<0-1> elapsed_ms=<ms>
+llm_stream session=<id> cloud=<bool> first_token_ms=<ms> total_ms=<ms> chars=<n>
+```
+
+Check these in Render's live log tail when debugging "the AI seems off" reports — a `hits=0` line means RAG found nothing (check the query/dictionary), a `top_similarity` well below 0.7 means a weak match, and a large `first_token_ms` points at Gemini latency rather than the backend.
+
+### Startup integrity check
+
+`render_start.py` opens the ChromaDB collection right after seeding and logs its record count. If the count is 0, the process exits non-zero — Render marks the deploy failed and keeps the previous version live, instead of silently starting a server that would answer every chat with empty RAG context.
 
 ---
 

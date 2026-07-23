@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
-"""Render startup: seed ChromaDB from baked-in data, then start uvicorn on $PORT."""
+"""Render startup: seed ChromaDB from baked-in data, verify it loaded, then start uvicorn on $PORT."""
 import os
 import shutil
+import sys
 from pathlib import Path
 
 CHROMA_PATH = Path("/app/chroma_db")
 SEED_PATH = Path("/app/chroma_db_seed")
+
+# config.py's default CHROMA_PERSIST_DIR is computed as
+# Path(__file__).resolve().parent.parent / "chroma_db" — correct for a
+# normal checkout (backend/config.py -> repo_root/chroma_db), but the
+# Dockerfile flattens backend/'s contents into /app (COPY backend/ .), so
+# that same computation resolves to "/chroma_db", not "/app/chroma_db"
+# where this script actually seeds data. Pin it explicitly so the app
+# doesn't silently depend on a CHROMA_PERSIST_DIR env var configured only
+# in the Render dashboard (invisible in this repo, easy to lose track of).
+os.environ.setdefault("CHROMA_PERSIST_DIR", str(CHROMA_PATH))
 
 
 def chroma_has_data() -> bool:
@@ -37,9 +48,31 @@ def seed_chroma() -> None:
     print("Seed complete.")
 
 
+def verify_collection() -> int:
+    """Open the collection and return its record count, logging loudly.
+
+    A build that boots with zero records would otherwise serve every chat
+    request with empty RAG context — degraded but not obviously broken.
+    Failing the deploy here (Render marks it failed, previous deploy stays
+    live) is much easier to notice than "the AI got worse" days later.
+    """
+    sys.path.insert(0, "/app")
+    from vector_store import get_or_create_collection  # noqa: E402
+
+    collection = get_or_create_collection()
+    count = collection.count()
+    if count == 0:
+        print("FATAL: ChromaDB collection loaded but contains 0 records — refusing to start.", file=sys.stderr)
+        sys.exit(1)
+    print(f"ChromaDB collection verified: {count} chunks loaded.")
+    return count
+
+
 def main() -> None:
     if not chroma_has_data():
         seed_chroma()
+
+    verify_collection()
 
     # Create data dirs (ephemeral, won't persist across restarts)
     Path("/app/data/chats").mkdir(parents=True, exist_ok=True)

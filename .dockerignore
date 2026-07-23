@@ -1,0 +1,62 @@
+# Node
+node_modules/
+.next/
+frontend/
+
+# Python
+venv/
+.venv/
+**/venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+*.egg-info/
+
+# Keep chroma_db for seed data
+!chroma_db/
+!chroma_db/**
+
+# Model cache (any level)
+.model_cache/
+**/.model_cache/
+
+# Git
+.git/
+
+# Flutter (not needed on backend)
+flutter_app/
+
+# Docs/specs
+specs/
+docs/
+
+# Local/offline tooling — not needed inside the deployed container
+# (smoke_prod.py in particular targets the live URL from outside and must
+# never run inside the container it's testing)
+scripts/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Env (use fly secrets instead)
+.env
+.env.local
+.env.*.local
+
+# Test files (not needed on server)
+tests/
+**/tests/
+
+# Bash scripts (not needed)
+start.bat
+deploy.bat
+deploy_vps.sh
+
+# Keep these
+!data-files/
+!data-files/**
