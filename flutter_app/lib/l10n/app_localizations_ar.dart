@@ -226,4 +226,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notesOptional => 'ملاحظات (اختياري)';
+
+  @override
+  String get cachedDataBanner => 'غير متصل — بيانات محفوظة مسبقاً';
+
+  @override
+  String get queuedMessage => 'في الانتظار — سيتم الإرسال عند توفر الاتصال';
+
+  @override
+  String get noConnection => 'لا يوجد اتصال بالإنترنت';
 }

@@ -227,4 +227,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notesOptional => 'Notes (optional)';
+
+  @override
+  String get cachedDataBanner => 'Offline — showing cached data';
+
+  @override
+  String get queuedMessage => 'Queued — will send when back online';
+
+  @override
+  String get noConnection => 'No internet connection';
 }

@@ -70,5 +70,8 @@
   "suggestedPrompt3": "كم ساعة صيانة دورية 40 ألف كم؟",
   "suggestedPrompt4": "كم ساعة تبديل طرمبة ماء؟",
   "fushaMeaning": "المعنى بالفصحى",
-  "notesOptional": "ملاحظات (اختياري)"
+  "notesOptional": "ملاحظات (اختياري)",
+  "cachedDataBanner": "غير متصل — بيانات محفوظة مسبقاً",
+  "queuedMessage": "في الانتظار — سيتم الإرسال عند توفر الاتصال",
+  "noConnection": "لا يوجد اتصال بالإنترنت"
 }

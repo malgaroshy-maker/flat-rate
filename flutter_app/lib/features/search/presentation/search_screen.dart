@@ -59,6 +59,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
               ],
             ),
           ),
+          if (ref.watch(searchFromCacheProvider)) const OfflineBanner(),
           Expanded(child: _query.isEmpty ? EmptyView(message: l10n.enterQuery) : _buildResults()),
         ],
       ),

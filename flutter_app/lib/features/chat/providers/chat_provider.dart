@@ -1,8 +1,16 @@
 import 'dart:async';
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/services/local_db.dart';
 import '../data/chat_repository.dart';
 import '../domain/chat_models.dart';
+
+bool _isConnectivityError(Object err) {
+  return err is DioException &&
+      (err.type == DioExceptionType.connectionError ||
+          err.type == DioExceptionType.connectionTimeout ||
+          err.type == DioExceptionType.unknown);
+}
 
 final chatRepositoryProvider =
     Provider<ChatRepository>((ref) => ChatRepository());
@@ -66,6 +74,13 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
               content: r['content'] as String,
             ))
         .toList();
+    // Still-pending outbox entries for this session (app may have been
+    // closed before connectivity returned) — show them as queued so the
+    // user isn't left wondering whether their message actually sent.
+    final pending = (await db.getOutboxMessages()).where((r) => r['session_id'] == id);
+    for (final _ in pending) {
+      messages.add(const ChatMessage(role: 'queued', content: ''));
+    }
     state = AsyncValue.data(messages);
   }
 
@@ -128,10 +143,20 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
         // instead of replacing the whole message list with AsyncValue.error,
         // which previously discarded everything on a network hiccup.
         _ref.read(chatStatusProvider.notifier).state = null;
-        state = AsyncValue.data([
-          ...msgs,
-          ChatMessage(role: 'error', content: err.toString()),
-        ]);
+        if (_isConnectivityError(err) && sid != null) {
+          // No network at all — queue it instead of just failing. It gets
+          // sent automatically once connectivity returns (see flushOutbox).
+          LocalDb().queueOutboxMessage(sessionId: sid, message: message, lang: lang);
+          state = AsyncValue.data([
+            ...msgs,
+            const ChatMessage(role: 'queued', content: ''),
+          ]);
+        } else {
+          state = AsyncValue.data([
+            ...msgs,
+            ChatMessage(role: 'error', content: err.toString()),
+          ]);
+        }
       },
       onDone: () {
         _ref.read(chatStatusProvider.notifier).state = null;
@@ -178,6 +203,43 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
     _subscription?.cancel();
     _sessionId = null;
     state = const AsyncValue.data([]);
+  }
+
+  /// Send everything queued in the offline outbox. Safe to call whenever
+  /// connectivity is regained — a no-op if the outbox is empty, and skipped
+  /// entirely while an interactive stream is already in flight so it can't
+  /// steal the shared cancel token from a message the user is actively
+  /// waiting on.
+  Future<void> flushOutbox() async {
+    if (_subscription != null) return;
+    final outbox = await LocalDb().getOutboxMessages();
+    for (final row in outbox) {
+      final id = row['id'] as int;
+      final sid = row['session_id'] as String;
+      final msg = row['message'] as String;
+      final lang = (row['lang'] as String?) ?? 'ar';
+
+      final buffer = StringBuffer();
+      try {
+        await for (final data in _repo.sendMessage(msg, sessionId: sid, lang: lang)) {
+          if (data.startsWith(sessionIdEventPrefix) || data.startsWith(statusEventPrefix)) continue;
+          buffer.write(data);
+        }
+      } catch (_) {
+        // Still offline (or another failure) — stop and try again on the
+        // next connectivity-restored signal, leaving the rest queued.
+        return;
+      }
+
+      if (buffer.isNotEmpty) {
+        await LocalDb().addMessage(sessionId: sid, role: 'assistant', content: buffer.toString());
+      }
+      await LocalDb().removeOutboxMessage(id);
+
+      if (sid == _sessionId) {
+        await loadSession(sid);
+      }
+    }
   }
 
   Future<void> newSession() async {

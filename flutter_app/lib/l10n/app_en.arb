@@ -85,5 +85,8 @@
   "suggestedPrompt3": "How many hours for a 40,000 km service?",
   "suggestedPrompt4": "How many hours to replace a water pump?",
   "fushaMeaning": "Fusha Meaning",
-  "notesOptional": "Notes (optional)"
+  "notesOptional": "Notes (optional)",
+  "cachedDataBanner": "Offline — showing cached data",
+  "queuedMessage": "Queued — will send when back online",
+  "noConnection": "No internet connection"
 }

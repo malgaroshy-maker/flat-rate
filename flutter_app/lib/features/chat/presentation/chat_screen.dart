@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/services/connectivity_service.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../../shared/widgets/common_widgets.dart';
 import '../../chat/domain/chat_models.dart';
 import '../../chat/providers/chat_provider.dart';
 
@@ -95,6 +97,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
       ),
       body: Column(
         children: [
+          if (!ref.watch(isOnlineProvider)) OfflineBanner(message: l10n.noConnection),
           Expanded(child: _buildMessages(chatState)),
           _buildInput(chatState.isLoading),
         ],
@@ -233,6 +236,32 @@ class _ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
+
+    if (msg.role == 'queued') {
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.surfaceContainerHigh,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 12, height: 12,
+                child: CircularProgressIndicator(strokeWidth: 2, color: theme.colorScheme.onSurfaceVariant),
+              ),
+              const SizedBox(width: 8),
+              Text(l10n.queuedMessage,
+                  style: TextStyle(color: theme.colorScheme.onSurfaceVariant, fontSize: 12)),
+            ],
+          ),
+        ),
+      );
+    }
 
     if (msg.role == 'error') {
       return Align(

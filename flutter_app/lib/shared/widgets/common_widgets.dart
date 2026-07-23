@@ -1,6 +1,33 @@
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 
+/// Slim banner shown above a list when it's serving cached data because
+/// the device is offline or the last network fetch failed.
+class OfflineBanner extends StatelessWidget {
+  final String? message;
+  const OfflineBanner({super.key, this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      color: theme.colorScheme.tertiaryContainer,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.cloud_off, size: 14, color: theme.colorScheme.onTertiaryContainer),
+          const SizedBox(width: 6),
+          Text(message ?? l10n.cachedDataBanner,
+              style: TextStyle(fontSize: 12, color: theme.colorScheme.onTertiaryContainer)),
+        ],
+      ),
+    );
+  }
+}
+
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({super.key});
 

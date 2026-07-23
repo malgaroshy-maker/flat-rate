@@ -99,12 +99,14 @@ class _DictionaryScreenState extends ConsumerState<DictionaryScreen> {
   @override
   Widget build(BuildContext context) {
     final terms = ref.watch(termListProvider);
+    final fromCache = ref.watch(dictionaryFromCacheProvider);
     final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.dictionaryTab)),
       body: Column(
         children: [
+          if (fromCache) const OfflineBanner(),
           Padding(
             padding: const EdgeInsets.all(12),
             child: TextField(

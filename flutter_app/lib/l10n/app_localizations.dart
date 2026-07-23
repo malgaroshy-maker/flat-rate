@@ -523,6 +523,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Notes (optional)'**
   String get notesOptional;
+
+  /// No description provided for @cachedDataBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline — showing cached data'**
+  String get cachedDataBanner;
+
+  /// No description provided for @queuedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued — will send when back online'**
+  String get queuedMessage;
+
+  /// No description provided for @noConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection'**
+  String get noConnection;
 }
 
 class _AppLocalizationsDelegate

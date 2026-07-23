@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/services/connectivity_service.dart';
 import 'core/theme/app_theme.dart';
+import 'features/chat/providers/chat_provider.dart';
 import 'l10n/app_localizations.dart';
 import 'routes/app_router.dart';
 
@@ -15,6 +17,14 @@ class LaborApp extends ConsumerWidget {
     final router = ref.watch(routerProvider);
     final locale = ref.watch(localeProvider);
     final themeMode = ref.watch(themeModeProvider);
+
+    // Whenever connectivity comes back (including the initial check), try
+    // sending anything queued in the offline chat outbox.
+    ref.listen(connectivityProvider, (previous, next) {
+      if (next.value == true) {
+        ref.read(chatProvider.notifier).flushOutbox();
+      }
+    });
 
     return MaterialApp.router(
       title: 'Labor Cost Estimator',
