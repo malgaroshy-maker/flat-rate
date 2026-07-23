@@ -67,15 +67,37 @@ async def delete_session_endpoint(session_id: str):
 @router.post("/send")
 async def send_message(
     request: Request,
-    message: str = Query(..., description="User message text"),
-    session_id: Optional[str] = Query(None, description="Existing session ID"),
-    lang: str = Query("ar", description="Language (ar/en)"),
-    history: Optional[str] = Query(None, description="JSON-encoded list of {role,content} for stateless mode"),
+    message: Optional[str] = Query(None, description="Deprecated: use JSON body instead"),
+    session_id: Optional[str] = Query(None, description="Deprecated: use JSON body instead"),
+    lang: str = Query("ar", description="Deprecated: use JSON body instead"),
+    history: Optional[str] = Query(None, description="Deprecated: use JSON body instead"),
 ):
-    history_messages: list[dict] = []
-    if history:
+    # Prefer a JSON body — long conversation history JSON-encoded into a
+    # query string risks hitting URL-length limits on some routers/proxies
+    # as a session grows. Query params are kept as a fallback so an
+    # already-installed APK built against the old contract keeps working
+    # until it's updated (sideload distribution isn't atomic with deploys).
+    body: dict = {}
+    if request.headers.get("content-type", "").startswith("application/json"):
         try:
-            history_messages = json.loads(history)
+            body = await request.json()
+        except Exception:
+            body = {}
+
+    message = body.get("message", message)
+    session_id = body.get("session_id", session_id)
+    lang = body.get("lang", lang) or "ar"
+    history_raw = body.get("history", history)
+
+    if not message:
+        raise HTTPException(status_code=422, detail="'message' is required")
+
+    history_messages: list[dict] = []
+    if isinstance(history_raw, list):
+        history_messages = history_raw
+    elif isinstance(history_raw, str) and history_raw:
+        try:
+            history_messages = json.loads(history_raw)
         except (json.JSONDecodeError, TypeError):
             pass
 

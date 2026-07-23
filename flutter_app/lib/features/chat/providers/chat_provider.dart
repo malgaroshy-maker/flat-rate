@@ -30,6 +30,7 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
   String? _sessionId;
   StreamSubscription<String>? _subscription;
   String _fullResponse = '';
+  List<ChatMessage> _msgsBeforeSend = [];
 
   ChatNotifier(this._repo, this._ref) : super(const AsyncValue.data([]));
 
@@ -68,16 +69,17 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
     state = AsyncValue.data(messages);
   }
 
-  void send(String message, {String lang = 'ar'}) {
+  void send(String message, {String lang = 'ar', bool persistUserMessage = true}) {
     _subscription?.cancel();
     _fullResponse = '';
     _ref.read(chatStatusProvider.notifier).state = null;
     final msgs = <ChatMessage>[...(state.valueOrNull ?? [])];
+    _msgsBeforeSend = msgs;
     state = const AsyncValue.loading();
 
-    // Persist user message locally
+    // Persist user message locally (skipped on retry — it's already stored)
     final sid = _sessionId;
-    if (sid != null) {
+    if (sid != null && persistUserMessage) {
       LocalDb().addMessage(
           sessionId: sid, role: 'user', content: message);
     }
@@ -122,8 +124,14 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
         ]);
       },
       onError: (err) {
+        // Keep the existing conversation visible — append an error bubble
+        // instead of replacing the whole message list with AsyncValue.error,
+        // which previously discarded everything on a network hiccup.
         _ref.read(chatStatusProvider.notifier).state = null;
-        state = AsyncValue.error(err, StackTrace.current);
+        state = AsyncValue.data([
+          ...msgs,
+          ChatMessage(role: 'error', content: err.toString()),
+        ]);
       },
       onDone: () {
         _ref.read(chatStatusProvider.notifier).state = null;
@@ -145,6 +153,25 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
   void cancel() {
     _subscription?.cancel();
     _repo.cancelStream();
+    _ref.read(chatStatusProvider.notifier).state = null;
+    // If a partial response already arrived, keep it; otherwise fall back to
+    // whatever the conversation looked like right before this send() call —
+    // AsyncValue.loading() has no value to preserve on its own.
+    state = AsyncValue.data(state.valueOrNull ?? _msgsBeforeSend);
+  }
+
+  /// Strip a trailing error bubble and resend the last user message.
+  void retryLast({String lang = 'ar'}) {
+    final msgs = state.valueOrNull;
+    if (msgs == null || msgs.isEmpty) return;
+    final cleaned = List<ChatMessage>.from(msgs);
+    while (cleaned.isNotEmpty && cleaned.last.role == 'error') {
+      cleaned.removeLast();
+    }
+    if (cleaned.isEmpty || cleaned.last.role != 'user') return;
+    final lastUserText = cleaned.last.content;
+    state = AsyncValue.data(cleaned);
+    send(lastUserText, lang: lang, persistUserMessage: false);
   }
 
   void clear() {

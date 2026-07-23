@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../l10n/app_localizations.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../chat/domain/chat_models.dart';
 import '../../chat/providers/chat_provider.dart';
 
@@ -35,18 +35,21 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     super.dispose();
   }
 
-  void _send() {
-    final text = _inputController.text.trim();
+  void _sendText(String text, {String lang = 'ar'}) {
     if (text.isEmpty) return;
-    _inputController.clear();
-
     final notifier = ref.read(chatProvider.notifier);
-    // Auto-create session if none exists
     if (notifier.sessionId == null) {
       notifier.newSession();
     }
     notifier.addUserMessage(ChatMessage(role: 'user', content: text));
-    notifier.send(text);
+    notifier.send(text, lang: lang);
+  }
+
+  void _send() {
+    final text = _inputController.text.trim();
+    if (text.isEmpty) return;
+    _inputController.clear();
+    _sendText(text);
   }
 
   void _scrollToBottom() {
@@ -93,7 +96,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
       body: Column(
         children: [
           Expanded(child: _buildMessages(chatState)),
-          _buildInput(),
+          _buildInput(chatState.isLoading),
         ],
       ),
     );
@@ -106,13 +109,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
       error: (err, _) => Center(child: Text('Error: $err')),
       data: (msgs) {
         if (msgs.isEmpty) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Text(l10n.chatGreeting,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: AppColors.slate400, fontSize: 15)),
-            ),
+          return _EmptyState(
+            onPromptTap: (text) => _sendText(text),
           );
         }
         if (msgs.length > _lastMsgCount) {
@@ -123,19 +121,23 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           controller: _scrollController,
           padding: const EdgeInsets.all(16),
           itemCount: msgs.length,
-          itemBuilder: (_, i) => _ChatBubble(msg: msgs[i]),
+          itemBuilder: (_, i) => _ChatBubble(
+            msg: msgs[i],
+            onRetry: () => ref.read(chatProvider.notifier).retryLast(),
+          ),
         );
       },
     );
   }
 
-  Widget _buildInput() {
+  Widget _buildInput(bool isGenerating) {
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(
-        color: AppColors.white,
-        border: Border(top: BorderSide(color: AppColors.slate200)),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
+        border: Border(top: BorderSide(color: theme.colorScheme.outlineVariant)),
       ),
       child: Row(
         children: [
@@ -147,17 +149,68 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                 border: const OutlineInputBorder(),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               ),
+              enabled: !isGenerating,
               onSubmitted: (_) => _send(),
               textInputAction: TextInputAction.send,
             ),
           ),
           const SizedBox(width: 8),
-          FilledButton.icon(
-            onPressed: _send,
-            icon: const Icon(Icons.send, size: 16),
-            label: Text(l10n.send),
-          ),
+          if (isGenerating)
+            FilledButton.icon(
+              onPressed: () => ref.read(chatProvider.notifier).cancel(),
+              style: FilledButton.styleFrom(backgroundColor: theme.colorScheme.error),
+              icon: const Icon(Icons.stop, size: 16),
+              label: Text(l10n.stopGenerating),
+            )
+          else
+            FilledButton.icon(
+              onPressed: _send,
+              icon: const Icon(Icons.send, size: 16),
+              label: Text(l10n.send),
+            ),
         ],
+      ),
+    );
+  }
+}
+
+class _EmptyState extends StatelessWidget {
+  final ValueChanged<String> onPromptTap;
+  const _EmptyState({required this.onPromptTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final prompts = [
+      l10n.suggestedPrompt1,
+      l10n.suggestedPrompt2,
+      l10n.suggestedPrompt3,
+      l10n.suggestedPrompt4,
+    ];
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(l10n.chatGreeting,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: theme.colorScheme.onSurfaceVariant, fontSize: 15)),
+            const SizedBox(height: 20),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              alignment: WrapAlignment.center,
+              children: prompts
+                  .map((p) => ActionChip(
+                        label: Text(p, style: const TextStyle(fontSize: 13)),
+                        onPressed: () => onPromptTap(p),
+                      ))
+                  .toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -165,39 +218,92 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
 class _ChatBubble extends StatelessWidget {
   final ChatMessage msg;
-  const _ChatBubble({required this.msg});
+  final VoidCallback onRetry;
+  const _ChatBubble({required this.msg, required this.onRetry});
+
+  void _copy(BuildContext context) {
+    Clipboard.setData(ClipboardData(text: msg.content));
+    final l10n = AppLocalizations.of(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(l10n.copied), duration: const Duration(seconds: 1)),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
+
+    if (msg.role == 'error') {
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(12),
+          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.85),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.errorContainer,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.error_outline, size: 18, color: theme.colorScheme.onErrorContainer),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Text(msg.content,
+                    style: TextStyle(color: theme.colorScheme.onErrorContainer, fontSize: 13)),
+              ),
+              const SizedBox(width: 8),
+              IconButton(
+                icon: Icon(Icons.refresh, size: 18, color: theme.colorScheme.onErrorContainer),
+                tooltip: l10n.retry,
+                onPressed: onRetry,
+                visualDensity: VisualDensity.compact,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     final isUser = msg.role == 'user';
     return Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: isUser ? AppColors.sky600 : AppColors.slate100,
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(16),
-            topRight: const Radius.circular(16),
-            bottomLeft: isUser ? const Radius.circular(16) : const Radius.circular(4),
-            bottomRight: isUser ? const Radius.circular(4) : const Radius.circular(16),
+      child: GestureDetector(
+        onLongPress: () => _copy(context),
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: isUser ? theme.colorScheme.primary : theme.colorScheme.surfaceContainerHigh,
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(16),
+              topRight: const Radius.circular(16),
+              bottomLeft: isUser ? const Radius.circular(16) : const Radius.circular(4),
+              bottomRight: isUser ? const Radius.circular(4) : const Radius.circular(16),
+            ),
           ),
-        ),
-        child: isUser
-            ? Text(msg.content, style: const TextStyle(color: AppColors.white, fontSize: 14, height: 1.5))
-            : MarkdownBody(
-                data: msg.content,
-                styleSheet: MarkdownStyleSheet(
-                  p: const TextStyle(fontSize: 14, height: 1.5, color: AppColors.slate900),
-                  strong: const TextStyle(fontWeight: FontWeight.bold),
-                  h2: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  h3: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                  code: TextStyle(fontSize: 12, backgroundColor: AppColors.slate200, color: AppColors.slate800),
-                  listBullet: const TextStyle(fontSize: 14, color: AppColors.slate600),
+          child: isUser
+              ? Text(msg.content,
+                  style: TextStyle(color: theme.colorScheme.onPrimary, fontSize: 14, height: 1.5))
+              : MarkdownBody(
+                  data: msg.content,
+                  styleSheet: MarkdownStyleSheet(
+                    p: TextStyle(fontSize: 14, height: 1.5, color: theme.colorScheme.onSurface),
+                    strong: const TextStyle(fontWeight: FontWeight.bold),
+                    h2: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    h3: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                    code: TextStyle(
+                        fontSize: 12,
+                        backgroundColor: theme.colorScheme.surfaceContainerHighest,
+                        color: theme.colorScheme.onSurface),
+                    listBullet: TextStyle(fontSize: 14, color: theme.colorScheme.onSurfaceVariant),
+                  ),
                 ),
-              ),
+        ),
       ),
     );
   }
@@ -213,6 +319,7 @@ class _StatusIndicator extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final status = ref.watch(chatStatusProvider);
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
     final label = switch (status) {
       'searching' => l10n.statusSearching,
       'thinking' => l10n.statusThinking,
@@ -224,7 +331,7 @@ class _StatusIndicator extends ConsumerWidget {
         const CircularProgressIndicator(),
         if (label != null) ...[
           const SizedBox(height: 12),
-          Text(label, style: const TextStyle(color: AppColors.slate400, fontSize: 13)),
+          Text(label, style: TextStyle(color: theme.colorScheme.onSurfaceVariant, fontSize: 13)),
         ],
       ],
     );
@@ -242,14 +349,15 @@ class _SessionDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sessionsAsync = ref.watch(sessionsProvider);
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
 
     return SafeArea(
       child: Column(
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: AppColors.slate200)),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: theme.colorScheme.outlineVariant)),
             ),
             child: Row(
               children: [
@@ -271,17 +379,32 @@ class _SessionDrawer extends ConsumerWidget {
                   separatorBuilder: (_, __) => const Divider(height: 1),
                   itemBuilder: (_, i) {
                     final s = sessions[i];
-                    return ListTile(
-                      title: Text(s.title.isNotEmpty ? s.title : l10n.newChat, maxLines: 1, overflow: TextOverflow.ellipsis),
-                      subtitle: Text(l10n.messages(s.messageCount), style: const TextStyle(fontSize: 12)),
-                      onTap: () => onSelect(s.id),
-                      trailing: IconButton(
-                        icon: const Icon(Icons.delete_outline, size: 18),
-                        tooltip: l10n.deleteSession,
-                        onPressed: () async {
-                          await ref.read(chatRepositoryProvider).deleteSession(s.id);
-                          ref.invalidate(sessionsProvider);
-                        },
+                    return Dismissible(
+                      key: ValueKey(s.id),
+                      direction: DismissDirection.endToStart,
+                      background: Container(
+                        color: theme.colorScheme.errorContainer,
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(Icons.delete_outline, color: theme.colorScheme.onErrorContainer),
+                      ),
+                      onDismissed: (_) async {
+                        await ref.read(chatRepositoryProvider).deleteSession(s.id);
+                        ref.invalidate(sessionsProvider);
+                      },
+                      child: ListTile(
+                        title: Text(s.title.isNotEmpty ? s.title : l10n.newChat,
+                            maxLines: 1, overflow: TextOverflow.ellipsis),
+                        subtitle: Text(l10n.messages(s.messageCount), style: const TextStyle(fontSize: 12)),
+                        onTap: () => onSelect(s.id),
+                        trailing: IconButton(
+                          icon: const Icon(Icons.delete_outline, size: 18),
+                          tooltip: l10n.deleteSession,
+                          onPressed: () async {
+                            await ref.read(chatRepositoryProvider).deleteSession(s.id);
+                            ref.invalidate(sessionsProvider);
+                          },
+                        ),
                       ),
                     );
                   },

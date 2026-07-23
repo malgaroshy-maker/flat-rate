@@ -187,4 +187,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get statusThinking => 'يفكر...';
+
+  @override
+  String get themeLabel => 'المظهر';
+
+  @override
+  String get themeLight => 'فاتح';
+
+  @override
+  String get themeDark => 'داكن';
+
+  @override
+  String get themeSystem => 'تلقائي';
+
+  @override
+  String get copy => 'نسخ';
+
+  @override
+  String get copied => 'تم النسخ';
+
+  @override
+  String get stopGenerating => 'إيقاف';
+
+  @override
+  String get suggestedPrompt1 => 'كم ساعة تبديل باطني أمامي؟';
+
+  @override
+  String get suggestedPrompt2 => 'كم ساعة تبديل مساعدات أمامية؟';
+
+  @override
+  String get suggestedPrompt3 => 'كم ساعة صيانة دورية 40 ألف كم؟';
+
+  @override
+  String get suggestedPrompt4 => 'كم ساعة تبديل طرمبة ماء؟';
+
+  @override
+  String get fushaMeaning => 'المعنى بالفصحى';
+
+  @override
+  String get notesOptional => 'ملاحظات (اختياري)';
 }

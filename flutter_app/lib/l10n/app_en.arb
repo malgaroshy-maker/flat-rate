@@ -72,5 +72,18 @@
   "offline": "offline",
   "deleteSession": "Delete session",
   "statusSearching": "Searching data...",
-  "statusThinking": "Thinking..."
+  "statusThinking": "Thinking...",
+  "themeLabel": "Theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System",
+  "copy": "Copy",
+  "copied": "Copied",
+  "stopGenerating": "Stop",
+  "suggestedPrompt1": "How many hours to replace front brake pads?",
+  "suggestedPrompt2": "How many hours to replace front shock absorbers?",
+  "suggestedPrompt3": "How many hours for a 40,000 km service?",
+  "suggestedPrompt4": "How many hours to replace a water pump?",
+  "fushaMeaning": "Fusha Meaning",
+  "notesOptional": "Notes (optional)"
 }

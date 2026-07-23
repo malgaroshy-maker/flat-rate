@@ -445,6 +445,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thinking...'**
   String get statusThinking;
+
+  /// No description provided for @themeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get themeLabel;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @themeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get themeSystem;
+
+  /// No description provided for @copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copy;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get copied;
+
+  /// No description provided for @stopGenerating.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get stopGenerating;
+
+  /// No description provided for @suggestedPrompt1.
+  ///
+  /// In en, this message translates to:
+  /// **'How many hours to replace front brake pads?'**
+  String get suggestedPrompt1;
+
+  /// No description provided for @suggestedPrompt2.
+  ///
+  /// In en, this message translates to:
+  /// **'How many hours to replace front shock absorbers?'**
+  String get suggestedPrompt2;
+
+  /// No description provided for @suggestedPrompt3.
+  ///
+  /// In en, this message translates to:
+  /// **'How many hours for a 40,000 km service?'**
+  String get suggestedPrompt3;
+
+  /// No description provided for @suggestedPrompt4.
+  ///
+  /// In en, this message translates to:
+  /// **'How many hours to replace a water pump?'**
+  String get suggestedPrompt4;
+
+  /// No description provided for @fushaMeaning.
+  ///
+  /// In en, this message translates to:
+  /// **'Fusha Meaning'**
+  String get fushaMeaning;
+
+  /// No description provided for @notesOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes (optional)'**
+  String get notesOptional;
 }
 
 class _AppLocalizationsDelegate

@@ -65,7 +65,10 @@ class ChatRepository {
       try {
         final response = await _dio.post(
           '/api/chat/send',
-          queryParameters: params,
+          // JSON body, not query params — a long conversation's JSON-encoded
+          // history could otherwise push the URL past router/proxy length
+          // limits as the session grows.
+          data: params,
           options: Options(responseType: ResponseType.stream),
           cancelToken: _cancelToken,
         );

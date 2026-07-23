@@ -187,4 +187,44 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get statusThinking => 'Thinking...';
+
+  @override
+  String get themeLabel => 'Theme';
+
+  @override
+  String get themeLight => 'Light';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get themeSystem => 'System';
+
+  @override
+  String get copy => 'Copy';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get stopGenerating => 'Stop';
+
+  @override
+  String get suggestedPrompt1 => 'How many hours to replace front brake pads?';
+
+  @override
+  String get suggestedPrompt2 =>
+      'How many hours to replace front shock absorbers?';
+
+  @override
+  String get suggestedPrompt3 => 'How many hours for a 40,000 km service?';
+
+  @override
+  String get suggestedPrompt4 => 'How many hours to replace a water pump?';
+
+  @override
+  String get fushaMeaning => 'Fusha Meaning';
+
+  @override
+  String get notesOptional => 'Notes (optional)';
 }

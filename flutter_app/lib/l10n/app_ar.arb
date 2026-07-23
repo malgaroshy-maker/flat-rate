@@ -57,5 +57,18 @@
   "offline": "غير متصل",
   "deleteSession": "حذف الجلسة",
   "statusSearching": "يبحث في البيانات...",
-  "statusThinking": "يفكر..."
+  "statusThinking": "يفكر...",
+  "themeLabel": "المظهر",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "themeSystem": "تلقائي",
+  "copy": "نسخ",
+  "copied": "تم النسخ",
+  "stopGenerating": "إيقاف",
+  "suggestedPrompt1": "كم ساعة تبديل باطني أمامي؟",
+  "suggestedPrompt2": "كم ساعة تبديل مساعدات أمامية؟",
+  "suggestedPrompt3": "كم ساعة صيانة دورية 40 ألف كم؟",
+  "suggestedPrompt4": "كم ساعة تبديل طرمبة ماء؟",
+  "fushaMeaning": "المعنى بالفصحى",
+  "notesOptional": "ملاحظات (اختياري)"
 }
