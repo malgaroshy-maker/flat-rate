@@ -13,7 +13,7 @@
 | D — Visual redesign | ◐ Dark mode + Arabic typography + theme-aware screens done; micro-interactions (D4) and full screen-by-screen polish (D3) not done |
 | E — Offline resilience | ✅ E1–E3 done (dictionary/search cache, chat outbox); E4–E6 (voice input, quick-estimate form, PDF from phone) not started |
 | F — Deploy/ops hardening | Not started |
-| G — Signed release APK | Not started |
+| G — Signed release APK | ✅ Build/signing done, v1.0.0 delivered; needs a real on-device smoke test + in-app update check (blocked on F4) |
 
 ---
 
@@ -109,10 +109,10 @@
 
 ## Phase G — Release engineering (APK sideload)
 
-- [ ] G1. Signed release build: generate upload keystore, `key.properties`, configure `build.gradle` signing, shrink/obfuscate (R8), verify `flutter build apk --release --split-per-abi`.
-- [ ] G2. Versioning + in-app update check: app calls `/api/version` (from F4); if a newer APK exists, show a download link (host APK as a GitHub release asset).
-- [ ] G3. Production config: release API base URL baked via `--dart-define`, certificate/timeout settings, crash logging (Sentry free tier or simple backend error report endpoint).
-- [ ] G4. Smoke-test checklist on a physical Android device (cold start, streaming, offline, RTL).
+- [x] G1. Signed release build done: upload keystore generated (gitignored, backed-up instructions in `docs/deployment.md`), `build.gradle.kts` signing config wired with a safe debug-key fallback when `key.properties` is absent, R8 minify + resource shrinking enabled. `flutter build apk --release --split-per-abi` verified: correct signature fingerprint (not debug key), correct package/version/permissions via `apksigner`/`aapt`. v1.0.0 APK delivered.
+- [ ] G2. In-app update check — blocked on F4 (`/api/version` doesn't exist yet). Not started.
+- [x] G3. Release API base URL baked via `--dart-define=API_BASE_URL=https://flat-rate.onrender.com`. Crash logging not set up (no Sentry/error-report endpoint).
+- [~] G4. No physical device available in this environment — verified everything short of an actual on-device install (signature, manifest, package contents, build success). **A real device install/smoke-test is still needed before handing this to the team.**
 
 ---
 
