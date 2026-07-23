@@ -32,7 +32,8 @@ async def stream_chat_response(
     # get fresh matches, not just the first message in a session.
     query_result = await asyncio.to_thread(execute_query, message, n_results=5)
     hits = query_result.get("hits", [])
-    rag_context = format_rag_context(hits)
+    matched_terms = query_result.get("matched_terms", [])
+    rag_context = format_rag_context(hits, matched_terms, lang)
 
     # 2. Build system prompt
     system = build_system_prompt(lang)

@@ -48,11 +48,53 @@ class DictionaryStore:
                 continue
             category = entry.get("standard_category") or entry.get("category", "General")
             english = entry.get("english_term") or entry.get("source_term", "")
-            self._add_internal(arabic, category, english)
+            fusha = entry.get("fusha_meaning", "")
+            notes = entry.get("notes", "")
+            self._add_internal(arabic, category, english, fusha, notes)
             added += 1
         if added:
             self._save()
         return added
+
+    def seed_or_update_terms(self, entries: list[dict]) -> dict:
+        """Add new terms and backfill fusha_meaning/notes/english_term on
+        existing entries when the source has data the stored entry lacks.
+        Used to re-run the curated dictionary MD over an already-seeded
+        store without duplicating or losing manual edits.
+        """
+        added = 0
+        updated = 0
+        for entry in entries:
+            arabic = entry.get("arabic_term", "").strip()
+            if not arabic:
+                continue
+            fusha = entry.get("fusha_meaning", "").strip()
+            english = (entry.get("english_term") or entry.get("source_term", "")).strip()
+            notes = entry.get("notes", "").strip()
+            category = entry.get("standard_category") or entry.get("category", "General")
+
+            existing = self._find_by_arabic(arabic)
+            if existing is None:
+                self._add_internal(arabic, category, english, fusha, notes)
+                added += 1
+                continue
+
+            changed = False
+            if fusha and not existing.get("fusha_meaning"):
+                existing["fusha_meaning"] = fusha
+                changed = True
+            if english and not existing.get("english_term"):
+                existing["english_term"] = english
+                changed = True
+            if notes and not existing.get("notes"):
+                existing["notes"] = notes
+                changed = True
+            if changed:
+                existing["updated_at"] = datetime.now(timezone.utc).isoformat()
+                updated += 1
+        if added or updated:
+            self._save()
+        return {"added": added, "updated": updated}
 
     def _find_by_arabic(self, arabic: str) -> Optional[dict]:
         term = arabic.strip().lower()
@@ -61,24 +103,41 @@ class DictionaryStore:
                 return t
         return None
 
-    def _add_internal(self, arabic_term: str, standard_category: str, english_term: str = "") -> str:
+    def _add_internal(
+        self,
+        arabic_term: str,
+        standard_category: str,
+        english_term: str = "",
+        fusha_meaning: str = "",
+        notes: str = "",
+    ) -> str:
         term_id = str(uuid.uuid4())[:8]
         self._terms[term_id] = {
             "id": term_id,
             "arabic_term": arabic_term.strip(),
             "standard_category": standard_category.strip(),
             "english_term": english_term.strip(),
+            "fusha_meaning": fusha_meaning.strip(),
+            "notes": notes.strip(),
             "created_at": datetime.now(timezone.utc).isoformat(),
         }
         return term_id
 
-    def add_term(self, arabic_term: str, standard_category: str, english_term: str = "") -> str:
-        term_id = self._add_internal(arabic_term, standard_category, english_term)
+    def add_term(
+        self,
+        arabic_term: str,
+        standard_category: str,
+        english_term: str = "",
+        fusha_meaning: str = "",
+        notes: str = "",
+    ) -> str:
+        term_id = self._add_internal(arabic_term, standard_category, english_term, fusha_meaning, notes)
         self._save()
         return term_id
 
     def update_term(self, term_id: str, arabic_term: Optional[str] = None,
-                    standard_category: Optional[str] = None, english_term: Optional[str] = None) -> bool:
+                    standard_category: Optional[str] = None, english_term: Optional[str] = None,
+                    fusha_meaning: Optional[str] = None, notes: Optional[str] = None) -> bool:
         if term_id not in self._terms:
             return False
         if arabic_term is not None:
@@ -87,6 +146,10 @@ class DictionaryStore:
             self._terms[term_id]["standard_category"] = standard_category.strip()
         if english_term is not None:
             self._terms[term_id]["english_term"] = english_term.strip()
+        if fusha_meaning is not None:
+            self._terms[term_id]["fusha_meaning"] = fusha_meaning.strip()
+        if notes is not None:
+            self._terms[term_id]["notes"] = notes.strip()
         self._terms[term_id]["updated_at"] = datetime.now(timezone.utc).isoformat()
         self._save()
         return True

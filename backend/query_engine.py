@@ -10,6 +10,7 @@ from typing import Any, Optional
 from embedding_router import embedding_router
 from llm_router import llm_router
 from qa.pipeline_observability import _STAGE_TIMINGS, reset_timings
+from term_expander import expand_query
 from vector_store import get_or_create_collection, query_collection, search_with_metadata
 
 
@@ -64,8 +65,13 @@ def execute_query(
     query_lang = _detect_language(query_text)
     _STAGE_TIMINGS["language_detect"].append(round(time.perf_counter() - t0, 6))
 
+    # Expand Libyan-dialect terms (e.g. براونطي) with their fusha/English
+    # equivalent before embedding — the historical records were normalized
+    # toward fusha at ingestion time, so the raw dialect query alone can
+    # under-match against them.
     t0 = time.perf_counter()
-    query_embedding = embedding_router.encode_single(query_text)
+    expanded_text, matched_terms = expand_query(query_text)
+    query_embedding = embedding_router.encode_single(expanded_text)
     _STAGE_TIMINGS["embed"].append(round(time.perf_counter() - t0, 6))
 
     col = get_or_create_collection()
@@ -153,6 +159,7 @@ def execute_query(
         "hits": hits,
         "confidence_range": confidence_range,
         "outliers": outliers,
+        "matched_terms": matched_terms,
         "mode": "cloud" if embedding_router.use_cloud else "local",
         "timing_ms": round(total_elapsed * 1000, 1),
     }

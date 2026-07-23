@@ -16,12 +16,16 @@ class TermCreate(BaseModel):
     arabic_term: str
     standard_category: str
     english_term: str = ""
+    fusha_meaning: str = ""
+    notes: str = ""
 
 
 class TermUpdate(BaseModel):
     arabic_term: Optional[str] = None
     standard_category: Optional[str] = None
     english_term: Optional[str] = None
+    fusha_meaning: Optional[str] = None
+    notes: Optional[str] = None
 
 
 class PendingCreate(BaseModel):
@@ -50,6 +54,8 @@ async def create_term(body: TermCreate):
         arabic_term=body.arabic_term,
         standard_category=body.standard_category,
         english_term=body.english_term,
+        fusha_meaning=body.fusha_meaning,
+        notes=body.notes,
     )
     return {"id": term_id, **dictionary_store.get_term(term_id)}
 
@@ -61,6 +67,8 @@ async def update_term(term_id: str, body: TermUpdate):
         arabic_term=body.arabic_term,
         standard_category=body.standard_category,
         english_term=body.english_term,
+        fusha_meaning=body.fusha_meaning,
+        notes=body.notes,
     )
     if not ok:
         raise HTTPException(status_code=404, detail="Term not found")

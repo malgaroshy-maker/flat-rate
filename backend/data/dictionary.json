@@ -5,49 +5,63 @@
       "arabic_term": "فيلترو زيت",
       "standard_category": "Engine",
       "english_term": "Engine Oil Filter",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "فلتر الزيت",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "2b590c5d": {
       "id": "2b590c5d",
       "arabic_term": "كوليتوري",
       "standard_category": "Engine",
       "english_term": "Exhaust Manifold",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "مجمع العادم",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "388e8163": {
       "id": "388e8163",
       "arabic_term": "تيربو",
       "standard_category": "Engine",
       "english_term": "Turbo Charger",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "الشاحن التوربيني",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "2d9ffe63": {
       "id": "2d9ffe63",
       "arabic_term": "تستاتا",
       "standard_category": "Engine",
       "english_term": "Cylinder Head",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "رأس المحرك (الاسطوانات)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "9547af1f": {
       "id": "9547af1f",
       "arabic_term": "جبة",
       "standard_category": "Engine",
       "english_term": "Cylinder Block",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "كتلة الاسطوانات (البلوك)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "f4dec22a": {
       "id": "f4dec22a",
       "arabic_term": "بسطوني",
       "standard_category": "Engine",
       "english_term": "Pistons",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "المكبس (البستون)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "23c6eb90": {
       "id": "23c6eb90",
       "arabic_term": "شنابر",
       "standard_category": "Engine",
       "english_term": "Piston Rings",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "حلقات المكبس (السنابر)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "f1fa2bcf": {
       "id": "f1fa2bcf",
@@ -61,28 +75,36 @@
       "arabic_term": "برنزيني",
       "standard_category": "Engine",
       "english_term": "Engine Bearings",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "الجلبة أو البطانة المعدنية للمحمل",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "7bfcb2bc": {
       "id": "7bfcb2bc",
       "arabic_term": "كولوا",
       "standard_category": "Engine",
       "english_term": "Crankshaft",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "عمود المرفق (الكرنك شافت)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "6a5289c5": {
       "id": "6a5289c5",
       "arabic_term": "امبروكم",
       "standard_category": "Engine",
       "english_term": "Camshaft",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "عمود الكامات (الكامشافت)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "b232af5d": {
       "id": "b232af5d",
       "arabic_term": "فولانو",
       "standard_category": "Engine",
       "english_term": "Flywheel",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "عجلة التوازن (الفلاي ويل)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "452ba126": {
       "id": "452ba126",
@@ -103,21 +125,27 @@
       "arabic_term": "سبانوتي",
       "standard_category": "Engine",
       "english_term": "Wrist Pin",
-      "created_at": "2026-05-16T08:44:14.899613+00:00"
+      "created_at": "2026-05-16T08:44:14.899613+00:00",
+      "fusha_meaning": "مسمار (دبوس) المكبس",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "61e65c43": {
       "id": "61e65c43",
       "arabic_term": "تكهيات",
       "standard_category": "Engine",
       "english_term": "Tappets / Valve Lifters",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "زوابع أو رافعات الصمامات",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "aabd4d85": {
       "id": "aabd4d85",
       "arabic_term": "مثلث",
       "standard_category": "Engine",
       "english_term": "Water Flange",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "وصلة/فلانجة الماء",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "7cc904e9": {
       "id": "7cc904e9",
@@ -138,21 +166,27 @@
       "arabic_term": "بوشي",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Differential Assy",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "مجموعة الدفرنس الكاملة",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "66099b13": {
       "id": "66099b13",
       "arabic_term": "مارشا",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Gear Shift Lever",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "ذراع تعشيق السرعات",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "f2e62b59": {
       "id": "f2e62b59",
       "arabic_term": "كامبيو",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Gearbox / Transmission",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "علبة التروس (الفتيس)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "967758c7": {
       "id": "967758c7",
@@ -166,70 +200,92 @@
       "arabic_term": "ديسكو",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Clutch Disc",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "قرص/غطاء العجلة، ويُستخدم أيضًا لقرص الفرامل وقرص القابض حسب السياق",
+      "notes": "context-dependent — meaning varies by surrounding text",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "f12c3b5a": {
       "id": "f12c3b5a",
       "arabic_term": "بلاطو",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Pressure Plate",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "طبق الضغط في القابض",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "bbe6949e": {
       "id": "bbe6949e",
       "arabic_term": "كوشينيتي",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Release Bearing",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "الكرسي (المحمل/البلي بيرنغ) — يشمل محمل العجلة ومحمل تحرير القابض حسب السياق",
+      "notes": "context-dependent — meaning varies by surrounding text",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "292f3b11": {
       "id": "292f3b11",
       "arabic_term": "سمياص",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "Axle Shaft / CV Joint",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "عمود الدفع الجانبي (نصف العمود)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "93254c29": {
       "id": "93254c29",
       "arabic_term": "كوفية",
       "standard_category": "Transmission & Drivetrain",
       "english_term": "CV Boot",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "غطاء مطاطي لمفصل السرعة الثابتة",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "8da41ea0": {
       "id": "8da41ea0",
       "arabic_term": "بومبة ستيرسو",
       "standard_category": "Suspension & Steering",
       "english_term": "Power Steering Pump",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "مضخة الدركسيون (التوجيه المعزز)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "07b871e3": {
       "id": "07b871e3",
       "arabic_term": "باليسترا",
       "standard_category": "Suspension & Steering",
       "english_term": "Leaf Spring",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "نابض الصفائح (سبرنك الشاحنات)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "6aa4b52e": {
       "id": "6aa4b52e",
       "arabic_term": "ستيرسو",
       "standard_category": "Suspension & Steering",
       "english_term": "Steering Wheel",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "عجلة القيادة أو جهاز التوجيه عمومًا",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "acd3a71f": {
       "id": "acd3a71f",
       "arabic_term": "سكاتلة",
       "standard_category": "Suspension & Steering",
       "english_term": "Steering Rack",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "علبة التوجيه",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "60fc5052": {
       "id": "60fc5052",
       "arabic_term": "مزطوري",
       "standard_category": "Suspension & Steering",
       "english_term": "Shock Absorbers",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "ماص الصدمات (المساعد)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "bc8c3b04": {
       "id": "bc8c3b04",
@@ -243,287 +299,369 @@
       "arabic_term": "براتشو",
       "standard_category": "Suspension & Steering",
       "english_term": "Control Arm",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "ذراع التعليق (تأكيد بصري من صاحب المركز)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "3fbe7c98": {
       "id": "3fbe7c98",
       "arabic_term": "موتسو",
       "standard_category": "Suspension & Steering",
       "english_term": "Wheel Hub",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "محور/طبلون العجلة (الهب)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "0f4910a6": {
       "id": "0f4910a6",
       "arabic_term": "فازيلي",
       "standard_category": "Suspension & Steering",
       "english_term": "Ball Joint",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "مفصل التعليق الكروي (مؤكَّد من مصدرين)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "07985377": {
       "id": "07985377",
       "arabic_term": "نوتشي",
       "standard_category": "Suspension & Steering",
       "english_term": "Tie Rod End",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "رأس ذراع التوجيه (تأكيد بصري من صاحب المركز)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "2e214e0c": {
       "id": "2e214e0c",
       "arabic_term": "مسمار ميزان",
       "standard_category": "Suspension & Steering",
       "english_term": "Stabilizer Link / Sway Bar Link",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "وصلة قضيب الموازنة (الاستابيلايزر)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "8abed4a9": {
       "id": "8abed4a9",
       "arabic_term": "قوميني",
       "standard_category": "Suspension & Steering",
       "english_term": "Rubber Bushings",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "جلب مطاطية صغيرة (بوش مطاطي)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "fdb3f9f2": {
       "id": "fdb3f9f2",
       "arabic_term": "نجمة",
       "standard_category": "Suspension & Steering",
       "english_term": "Flexible Steering Coupler",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "وصلة مرنة لعمود التوجيه",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "fc4f2f3a": {
       "id": "fc4f2f3a",
       "arabic_term": "سراويل",
       "standard_category": "Suspension & Steering",
       "english_term": "Undercarriage / Chassis",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "الهيكل السفلي / الشاسيه",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "6d70d563": {
       "id": "6d70d563",
       "arabic_term": "بومبة فرينو",
       "standard_category": "Brakes",
       "english_term": "Brake Master Cylinder",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "أسطوانة الفرامل الرئيسية (الماستر)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "a2546c8e": {
       "id": "a2546c8e",
       "arabic_term": "توبو فرينو",
       "standard_category": "Brakes",
       "english_term": "Brake Hose / Tube",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "خرطوم الفرامل",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "6c7a2a07": {
       "id": "6c7a2a07",
       "arabic_term": "طمبور",
       "standard_category": "Brakes",
       "english_term": "Brake Drum",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "أسطوانة الفرامل الخلفية",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "a62e9b81": {
       "id": "a62e9b81",
       "arabic_term": "فرينو ماني",
       "standard_category": "Brakes",
       "english_term": "Handbrake",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "فرامل اليد",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "801ea74e": {
       "id": "801ea74e",
       "arabic_term": "خيط فرينو",
       "standard_category": "Brakes",
       "english_term": "Handbrake Cable",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "سلك فرامل اليد",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "24c481c9": {
       "id": "24c481c9",
       "arabic_term": "سكاتلة فيوزات",
       "standard_category": "Electrical & Sensors",
       "english_term": "Fuse Box / Board",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "علبة الفيوزات",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "6c3d12e4": {
       "id": "6c3d12e4",
       "arabic_term": "دينمو",
       "standard_category": "Electrical & Sensors",
       "english_term": "Alternator",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "المولد الكهربائي",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "1fc41177": {
       "id": "1fc41177",
       "arabic_term": "موتورينو",
       "standard_category": "Electrical & Sensors",
       "english_term": "Starter Motor",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "مارش التشغيل",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "51952fb9": {
       "id": "51952fb9",
       "arabic_term": "بونبينة",
       "standard_category": "Electrical & Sensors",
       "english_term": "Ignition Coil",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "ملف إشعال الشرارة",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "50d8cfe6": {
       "id": "50d8cfe6",
       "arabic_term": "شماعي",
       "standard_category": "Electrical & Sensors",
       "english_term": "Spark Plugs",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "شمعات الاحتراق",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "042a99a3": {
       "id": "042a99a3",
       "arabic_term": "مورسيتي",
       "standard_category": "Electrical & Sensors",
       "english_term": "Battery Terminals",
-      "created_at": "2026-05-16T08:44:14.900615+00:00"
+      "created_at": "2026-05-16T08:44:14.900615+00:00",
+      "fusha_meaning": "أطراف/قطبان البطارية",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "098c6c68": {
       "id": "098c6c68",
       "arabic_term": "شريط إيرباق",
       "standard_category": "Electrical & Sensors",
       "english_term": "Clock Spring",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "ملف الساعة (وصلة السلك الدوارة تحت عجلة القيادة، تغذي الإيرباق)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "8258afe6": {
       "id": "8258afe6",
       "arabic_term": "فيوزات",
       "standard_category": "Electrical & Sensors",
       "english_term": "Fuses",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "الفيوزات",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "6cc77ac4": {
       "id": "6cc77ac4",
       "arabic_term": "كمبريسوري",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "A / C Compressor",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "ضاغط التكييف",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "3f54bcf7": {
       "id": "3f54bcf7",
       "arabic_term": "كندنساتوري",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Condenser Assy",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "مكثف التكييف (الرادياتير الصغير)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "9ac61df2": {
       "id": "9ac61df2",
       "arabic_term": "سرباتويو",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Fuel Tank",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "خزان الوقود (مرادف)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "4a6222b9": {
       "id": "4a6222b9",
       "arabic_term": "توبو راداتوري",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Radiator Upper / Lower Hoses",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "خرطوم الرادياتير (العلوي/السفلي)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "4464301b": {
       "id": "4464301b",
       "arabic_term": "راداتوري",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Radiator",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "المشعاع (الرادياتير)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "f662d108": {
       "id": "f662d108",
       "arabic_term": "بومبة ميه",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Water Pump",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "مضخة المياه",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "acdc0f7a": {
       "id": "acdc0f7a",
       "arabic_term": "قربة",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Expansion Tank / Reservoir",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "خزان توسعة الماء (وعاء الاحتياط)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "1415b9a4": {
       "id": "1415b9a4",
       "arabic_term": "ترموستات",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Thermostat",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "منظم حرارة الماء",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "65714ac8": {
       "id": "65714ac8",
       "arabic_term": "ليفلو",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Oil Dipstick",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "عصا قياس مستوى الزيت",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
     },
     "ce980477": {
       "id": "ce980477",
       "arabic_term": "ستاقوبة",
       "standard_category": "Cooling , Fluids & Air Conditioning",
       "english_term": "Oil Sump / Oil Pan",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "حوض/كرتير زيت المحرك",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
     },
     "4b5d4caa": {
       "id": "4b5d4caa",
       "arabic_term": "شنتورة",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Seat Belt Assy",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "حزام الأمان",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "f6008f69": {
       "id": "f6008f69",
       "arabic_term": "موتورينو مساحات",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Linkage",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "موتور وذراع المساحات",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "7df54256": {
       "id": "7df54256",
       "arabic_term": "كبوت",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Hood / Bonnet / Engine Cover",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "غطاء المحرك الأمامي",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "a6bab4a4": {
       "id": "a6bab4a4",
       "arabic_term": "باراوانطي",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Bumper",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "الصدّام (المصد) الأمامي أو الخلفي",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
     },
     "87d1975c": {
       "id": "87d1975c",
       "arabic_term": "رفرف",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Fender / Wing",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "الرفرف فوق العجلة",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "1c18df04": {
       "id": "1c18df04",
       "arabic_term": "ماسكرينة",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Front Grille",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "الشبك الأمامي للسيارة",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "c72f48f6": {
       "id": "c72f48f6",
       "arabic_term": "فنار",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Headlight",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "المصباح الأمامي",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "0bd7a811": {
       "id": "0bd7a811",
       "arabic_term": "مراية",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Side Mirror",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "مرآة السيارة الجانبية",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "d1614c8b": {
       "id": "d1614c8b",
       "arabic_term": "مانيليا",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Door Handle",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "مقبض الباب",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "17032ade": {
       "id": "17032ade",
       "arabic_term": "مساحات",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Wipers",
-      "created_at": "2026-05-16T08:44:14.901629+00:00"
+      "created_at": "2026-05-16T08:44:14.901629+00:00",
+      "fusha_meaning": "ماسحات الزجاج الأمامي",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "1b3432fc": {
       "id": "1b3432fc",
@@ -544,35 +682,45 @@
       "arabic_term": "مرش",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Windshield",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "الزجاج الأمامي أو الزجاج عمومًا",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "030023ec": {
       "id": "030023ec",
       "arabic_term": "طبلون",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Dashboard",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "لوحة القيادة (الداشبورد)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "1520ce59": {
       "id": "1520ce59",
       "arabic_term": "كوادرو",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Instrument Cluster",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "لوحة العدادات",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "617e72a3": {
       "id": "617e72a3",
       "arabic_term": "كرسي",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Car Seat",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "مقعد السيارة",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "0404ee02": {
       "id": "0404ee02",
       "arabic_term": "تبيزيريا",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Upholstery",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "تنجيد المقاعد",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "0d90111f": {
       "id": "0d90111f",
@@ -586,28 +734,36 @@
       "arabic_term": "سنتر لوك",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Door Lock Mechanism",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "آلية قفل الأبواب",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "bc5a0a6f": {
       "id": "bc5a0a6f",
       "arabic_term": "الزافيترو",
       "standard_category": "Body , Cabin & Accessories",
       "english_term": "Window Regulator",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "رافعة الزجاج (الكرنك)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "e70179ea": {
       "id": "e70179ea",
       "arabic_term": "جهاز كشف",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Diagnostic Tool",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "جهاز تشخيص أعطال إلكتروني",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
     },
     "f14f2520": {
       "id": "f14f2520",
       "arabic_term": "دوبيو قابينا",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Double Cab Truck",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "شاحنة بمقصورة قيادة مزدوجة",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
     },
     "5d513151": {
       "id": "5d513151",
@@ -621,35 +777,45 @@
       "arabic_term": "لاوادجو",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Car Wash Station",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "محطة غسيل السيارات",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
     },
     "9e74d214": {
       "id": "9e74d214",
       "arabic_term": "سيمافرو",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Traffic Lights",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "إشارة المرور الضوئية",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
     },
     "3948fe0b": {
       "id": "3948fe0b",
       "arabic_term": "بركيدجو",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Parking Lot",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "موقف السيارات",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
     },
     "7c038955": {
       "id": "7c038955",
       "arabic_term": "كاتشافيتي",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Screwdriver",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "مفك البراغي",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "8c95b4f9": {
       "id": "8c95b4f9",
       "arabic_term": "بينسة",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Pliers",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "كماشة/زرادية",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "d348c06e": {
       "id": "d348c06e",
@@ -663,35 +829,45 @@
       "arabic_term": "قادوما",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Hammer",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "مطرقة",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "bb234c54": {
       "id": "bb234c54",
       "arabic_term": "مورصة",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Vise / Clamp",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "ملزمة أو مشبك تثبيت",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "8010dcc0": {
       "id": "8010dcc0",
       "arabic_term": "ترابنو",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Drill",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "مثقاب",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "e14258d1": {
       "id": "e14258d1",
       "arabic_term": "كريك",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Car Jack",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "رافعة السيارة (الجاك)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "9dc514ab": {
       "id": "9dc514ab",
       "arabic_term": "مفتاح كريك",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Wheel / Lug Wrench",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "مفتاح فك عجلات (المفتاح الصليبة)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
     },
     "70228e63": {
       "id": "70228e63",
@@ -705,14 +881,18 @@
       "arabic_term": "شكورتا",
       "standard_category": "Diagnostic Tools , Types & General Terminology",
       "english_term": "Spare Tire",
-      "created_at": "2026-05-16T08:44:14.902628+00:00"
+      "created_at": "2026-05-16T08:44:14.902628+00:00",
+      "fusha_meaning": "الإطار الاحتياطي (مرادف)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "6d5a19b6": {
       "id": "6d5a19b6",
       "arabic_term": "باطني",
       "standard_category": "Brakes",
       "english_term": "Brake Pads",
-      "created_at": "2026-05-16T08:46:02.511981+00:00"
+      "created_at": "2026-05-16T08:46:02.511981+00:00",
+      "fusha_meaning": "تيل الفرامل (فحمات الفرامل القرصية)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
     },
     "3b839dc6": {
       "id": "3b839dc6",
@@ -742,7 +922,1636 @@
       "standard_category": "Cooling",
       "english_term": "Water Pump",
       "created_at": "2026-05-16T08:46:03.326875+00:00"
+    },
+    "d8e2aca5": {
+      "id": "d8e2aca5",
+      "arabic_term": "اليد العاملة / يد عاملة",
+      "standard_category": "General",
+      "english_term": "Labor charge / labor cost",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "12c4987e": {
+      "id": "12c4987e",
+      "arabic_term": "صيانة دورية",
+      "standard_category": "General",
+      "english_term": "Scheduled/periodic maintenance",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الصيانة الدورية المجدولة (حسب الكيلومترات)",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "910b2e24": {
+      "id": "910b2e24",
+      "arabic_term": "صيانة وقائية",
+      "standard_category": "General",
+      "english_term": "Preventive maintenance",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الصيانة الوقائية",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "edbaed5c": {
+      "id": "edbaed5c",
+      "arabic_term": "كشف",
+      "standard_category": "General",
+      "english_term": "Inspection / diagnostic check",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الفحص أو التشخيص",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "2891a101": {
+      "id": "2891a101",
+      "arabic_term": "كشف شامل",
+      "standard_category": "General",
+      "english_term": "Comprehensive inspection",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "فحص شامل لكامل السيارة",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "ef40edbf": {
+      "id": "ef40edbf",
+      "arabic_term": "سيرفيز / سيرفز",
+      "standard_category": "General",
+      "english_term": "Service (English loanword)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "ac2393a1": {
+      "id": "ac2393a1",
+      "arabic_term": "مقايسة",
+      "standard_category": "General",
+      "english_term": "Engine machining / reboring",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "تصنيع/تجليخ أجزاء المحرك عند الإصلاح الجذري",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "2e6f869b": {
+      "id": "2e6f869b",
+      "arabic_term": "مصنعيات",
+      "standard_category": "General",
+      "english_term": "Workshop labor/manufacturing charges",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "تكاليف العمالة والتصنيع الإضافية",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "4d9b0f8b": {
+      "id": "4d9b0f8b",
+      "arabic_term": "PDI",
+      "standard_category": "General",
+      "english_term": "Pre-Delivery Inspection",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "29d7e1e1": {
+      "id": "29d7e1e1",
+      "arabic_term": "خدمة صالة",
+      "standard_category": "General",
+      "english_term": "Suspension system service",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "خدمة نظام التعليق (الصالة = نظام Suspension وما يخصه من قطع لثبات السيارة على الطريق)",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "34e7c2fd": {
+      "id": "34e7c2fd",
+      "arabic_term": "تسريب",
+      "standard_category": "General",
+      "english_term": "Fluid leak",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "تسرب سائل (زيت/ماء/غاز)",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "20e1b88c": {
+      "id": "20e1b88c",
+      "arabic_term": "زيادة كراسي",
+      "standard_category": "General",
+      "english_term": "Adding passenger seats (capacity conversion)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "زيادة عدد مقاعد الشاحنة/الحافلة (تحويل السعة الاستيعابية)",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "4e31093d": {
+      "id": "4e31093d",
+      "arabic_term": "سمكرة",
+      "standard_category": "General",
+      "english_term": "Panel beating / body repair",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "أعمال طرق وتشكيل هيكل السيارة المعدني",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "d38e6b15": {
+      "id": "d38e6b15",
+      "arabic_term": "طلاء",
+      "standard_category": "General",
+      "english_term": "Painting",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الدهان",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "b38a92f5": {
+      "id": "b38a92f5",
+      "arabic_term": "دهان",
+      "standard_category": "General",
+      "english_term": "Spot/partial painting",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "طلاء جزئي أو رتوش",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "ad45f0fa": {
+      "id": "ad45f0fa",
+      "arabic_term": "معالجة صدأ / صدا",
+      "standard_category": "General",
+      "english_term": "Rust treatment",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "cb23b537": {
+      "id": "cb23b537",
+      "arabic_term": "رمالة",
+      "standard_category": "General",
+      "english_term": "Sandblasting",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "السفع الرملي لإزالة الصدأ",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "a4bab5a7": {
+      "id": "a4bab5a7",
+      "arabic_term": "سنفرة",
+      "standard_category": "General",
+      "english_term": "Sanding",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "صنفرة السطح تمهيدًا للطلاء",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "196c5651": {
+      "id": "196c5651",
+      "arabic_term": "باسطة",
+      "standard_category": "General",
+      "english_term": "Body filler / putty",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "معجون تسوية سطح الهيكل قبل الطلاء",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "2b94b951": {
+      "id": "2b94b951",
+      "arabic_term": "بوليش / بولش",
+      "standard_category": "General",
+      "english_term": "Polishing",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "8a0f5e4b": {
+      "id": "8a0f5e4b",
+      "arabic_term": "رتوش",
+      "standard_category": "General",
+      "english_term": "Paint touch-ups",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "لمسات تجميلية للطلاء",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "0a437dda": {
+      "id": "0a437dda",
+      "arabic_term": "خبش / خبشة",
+      "standard_category": "General",
+      "english_term": "Surface scuff/scratch",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "2da548ac": {
+      "id": "2da548ac",
+      "arabic_term": "خدوش",
+      "standard_category": "General",
+      "english_term": "Scratches",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "خدوش",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "702fcaae": {
+      "id": "702fcaae",
+      "arabic_term": "ضربة",
+      "standard_category": "General",
+      "english_term": "Dent / impact damage",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "أثر تصادم أو انبعاج",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "200fc59b": {
+      "id": "200fc59b",
+      "arabic_term": "تصفيح / مصفحة",
+      "standard_category": "General",
+      "english_term": "Vehicle armor plating",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "97602191": {
+      "id": "97602191",
+      "arabic_term": "براونطي / برونطي / براولطي / باراوانطي",
+      "standard_category": "General",
+      "english_term": "Bumper (Italian: *paraurti*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "cc5c8659": {
+      "id": "cc5c8659",
+      "arabic_term": "صدام",
+      "standard_category": "General",
+      "english_term": "Bumper",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "المصد",
+      "updated_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "c39305bb": {
+      "id": "c39305bb",
+      "arabic_term": "كوفنو / كوفني / كبوت",
+      "standard_category": "General",
+      "english_term": "Hood / bonnet (Italian: *cofano*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "375e0e9f": {
+      "id": "375e0e9f",
+      "arabic_term": "هلال",
+      "standard_category": "General",
+      "english_term": "Wheel arch",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "قوس فتحة العجلة",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "de15cedd": {
+      "id": "de15cedd",
+      "arabic_term": "فخدة",
+      "standard_category": "General",
+      "english_term": "Rear quarter panel",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "اللوح الجانبي الخلفي للهيكل",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "179297f8": {
+      "id": "179297f8",
+      "arabic_term": "قابينة",
+      "standard_category": "General",
+      "english_term": "Truck cab",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "مقصورة القيادة (في الشاحنات)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "3709c525": {
+      "id": "3709c525",
+      "arabic_term": "فودرة",
+      "standard_category": "General",
+      "english_term": "Interior lining/trim",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "البطانة الداخلية (تنجيد)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "1eaa21a9": {
+      "id": "1eaa21a9",
+      "arabic_term": "باطني / باطنيات",
+      "standard_category": "General",
+      "english_term": "Brake pads (disc brakes)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "9a72a1e9": {
+      "id": "9a72a1e9",
+      "arabic_term": "طبلون / تابلو",
+      "standard_category": "General",
+      "english_term": "Dashboard",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "15825309": {
+      "id": "15825309",
+      "arabic_term": "واقي",
+      "standard_category": "General",
+      "english_term": "Guard/protector (general) — fender liner, shock boot, engine skid plate, etc.",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "غطاء أو حامٍ واقٍ عمومًا (مثل: واقي رفرف = بطانة الرفرف، واقي مزطوري = غطاء المساعد، واقي سفلي = درع أسفل المحرك)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "9c90e996": {
+      "id": "9c90e996",
+      "arabic_term": "استبن",
+      "standard_category": "General",
+      "english_term": "Spare tire",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الإطار الاحتياطي",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "2ae6c0cf": {
+      "id": "2ae6c0cf",
+      "arabic_term": "كفر",
+      "standard_category": "General",
+      "english_term": "Tire / cover",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الإطار أو الغطاء",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "fe43184e": {
+      "id": "fe43184e",
+      "arabic_term": "سطب / اسطب",
+      "standard_category": "General",
+      "english_term": "Rear stop/tail light",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "00a3e665": {
+      "id": "00a3e665",
+      "arabic_term": "جنطة",
+      "standard_category": "General",
+      "english_term": "Rim / wheel",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "حافة العجلة المعدنية (الرنجة)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "5636dbe9": {
+      "id": "5636dbe9",
+      "arabic_term": "زجاج",
+      "standard_category": "General",
+      "english_term": "Glass / windows",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الزجاج",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "058e2c61": {
+      "id": "058e2c61",
+      "arabic_term": "كاتينة",
+      "standard_category": "General",
+      "english_term": "Timing chain (Italian: *catena*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "سلسلة التوقيت",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "f382fe1c": {
+      "id": "f382fe1c",
+      "arabic_term": "جبة / مونوبلوكو",
+      "standard_category": "General",
+      "english_term": "Cylinder block (Italian: *monoblocco*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "b176a201": {
+      "id": "b176a201",
+      "arabic_term": "بيّلا",
+      "standard_category": "General",
+      "english_term": "Connecting rod (Italian: *biella*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ذراع التوصيل (البيالة)",
+      "updated_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "768179f5": {
+      "id": "768179f5",
+      "arabic_term": "كرونة / كارونة",
+      "standard_category": "General",
+      "english_term": "Crown wheel / differential ring gear",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "02824706": {
+      "id": "02824706",
+      "arabic_term": "بوشي / ديفرنزيالي",
+      "standard_category": "General",
+      "english_term": "Differential assembly (Italian: *differenziale*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "52ee3c21": {
+      "id": "52ee3c21",
+      "arabic_term": "كمبيو / كامبيو",
+      "standard_category": "General",
+      "english_term": "Gearbox / transmission",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "26ce1b53": {
+      "id": "26ce1b53",
+      "arabic_term": "كاردان",
+      "standard_category": "General",
+      "english_term": "Propeller / drive shaft",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "عمود الكردان (نقل الحركة)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "a9e3c47c": {
+      "id": "a9e3c47c",
+      "arabic_term": "بومبة",
+      "standard_category": "General",
+      "english_term": "Pump",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "مضخة",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "956f88b9": {
+      "id": "956f88b9",
+      "arabic_term": "رشاشات",
+      "standard_category": "General",
+      "english_term": "Fuel injectors",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "بخاخات (حاقنات) الوقود",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "909d6cdd": {
+      "id": "909d6cdd",
+      "arabic_term": "بوبينة / بونبينة",
+      "standard_category": "General",
+      "english_term": "Ignition coil",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "9be74349": {
+      "id": "9be74349",
+      "arabic_term": "طاقم فاصل",
+      "standard_category": "General",
+      "english_term": "Clutch kit",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "طقم القابض (الدبرياج الكامل)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "072b3460": {
+      "id": "072b3460",
+      "arabic_term": "فرسيوني (بالفاء)",
+      "standard_category": "General",
+      "english_term": "Clutch (Italian: *frizione*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "القابض (الدبرياج) — دواسة أقصى اليسار",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "8d978638": {
+      "id": "8d978638",
+      "arabic_term": "برولة / بروليات / برنزيني",
+      "standard_category": "General",
+      "english_term": "Bearing bushing (Italian: *bronzina*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "97e202ec": {
+      "id": "97e202ec",
+      "arabic_term": "قرسيوني / كرسيوني (بالقاف) / فاشي",
+      "standard_category": "General",
+      "english_term": "Gasket (Italian: *guarnizione*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "3817ea82": {
+      "id": "3817ea82",
+      "arabic_term": "كوبيركو",
+      "standard_category": "General",
+      "english_term": "Cover, e.g. valve cover (Italian: *coperchio*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الغطاء (كغطاء الصمامات)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "ff4e6c10": {
+      "id": "ff4e6c10",
+      "arabic_term": "باراولي",
+      "standard_category": "General",
+      "english_term": "Oil seals",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "سِمّات الزيت المطاطية",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "15c18ff4": {
+      "id": "15c18ff4",
+      "arabic_term": "ستاقوبا / ستاقوبة",
+      "standard_category": "General",
+      "english_term": "Oil pan / sump",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "36d27788": {
+      "id": "36d27788",
+      "arabic_term": "تنك",
+      "standard_category": "General",
+      "english_term": "Fuel tank",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "خزان الوقود",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "96befcc3": {
+      "id": "96befcc3",
+      "arabic_term": "عوامة",
+      "standard_category": "General",
+      "english_term": "Fuel tank float",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "عوامة قياس مستوى خزان الوقود",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "cb09a9dc": {
+      "id": "cb09a9dc",
+      "arabic_term": "شنقة",
+      "standard_category": "General",
+      "english_term": "Serpentine / accessory belt",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "سير المحرك الخارجي (سير المجموعات)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "3c84820d": {
+      "id": "3c84820d",
+      "arabic_term": "بكرة شنقة",
+      "standard_category": "General",
+      "english_term": "Belt pulley",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "بكرة سير الحزام",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "e64fda97": {
+      "id": "e64fda97",
+      "arabic_term": "حشوة",
+      "standard_category": "General",
+      "english_term": "Gasket",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "حشية أو جوان إحكام",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "175a42e1": {
+      "id": "175a42e1",
+      "arabic_term": "شوايب",
+      "standard_category": "General",
+      "english_term": "Metal shavings in oil (wear indicator)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "برادة معدنية توجد في الزيت",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "cabd8c7a": {
+      "id": "cabd8c7a",
+      "arabic_term": "تكتيك / فطفطة / جربيع",
+      "standard_category": "General",
+      "english_term": "Abnormal engine knock/rattle noise",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "9f548829": {
+      "id": "9f548829",
+      "arabic_term": "شماعي / باواجي",
+      "standard_category": "General",
+      "english_term": "Spark plugs",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "507825f4": {
+      "id": "507825f4",
+      "arabic_term": "بيانتو",
+      "standard_category": "General",
+      "english_term": "Wiring harness",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "شبكة الأسلاك الكهربائية (التمديدات)",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "8563529b": {
+      "id": "8563529b",
+      "arabic_term": "حساس",
+      "standard_category": "General",
+      "english_term": "Sensor",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "المستشعر",
+      "updated_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "4a02ec87": {
+      "id": "4a02ec87",
+      "arabic_term": "خيط / خيوط",
+      "standard_category": "General",
+      "english_term": "Electrical wires",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "0a909018": {
+      "id": "0a909018",
+      "arabic_term": "ريلي",
+      "standard_category": "General",
+      "english_term": "Relay",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "المرحل الكهربائي",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "43cc140d": {
+      "id": "43cc140d",
+      "arabic_term": "كمبيوتر (السيارة)",
+      "standard_category": "General",
+      "english_term": "ECU (Engine Control Unit)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "وحدة التحكم الإلكترونية",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "b5545903": {
+      "id": "b5545903",
+      "arabic_term": "برمجة كمبيوتر",
+      "standard_category": "General",
+      "english_term": "ECU programming",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "برمجة وحدة التحكم الإلكترونية",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "8ae4157a": {
+      "id": "8ae4157a",
+      "arabic_term": "لامبة / لامبات",
+      "standard_category": "General",
+      "english_term": "Warning light / indicator bulb (dashboard)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "e2ca2fd1": {
+      "id": "e2ca2fd1",
+      "arabic_term": "تماتك",
+      "standard_category": "General",
+      "english_term": "Controller unit (electrical or thermal), e.g. fan controller",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "وحدة تحكم (كهربائية أو حرارية)، مثل: تماتك المروحة = وحدة تحكم تشغيل المروحة (تأكيد من صاحب المركز)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "efee4f67": {
+      "id": "efee4f67",
+      "arabic_term": "فيوزات / فيوزيبيلي",
+      "standard_category": "General",
+      "english_term": "Fuses",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "63b24f55": {
+      "id": "63b24f55",
+      "arabic_term": "فاريتي / فريجة",
+      "standard_category": "General",
+      "english_term": "Fog lamp / front combination lights",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "56b89cbb": {
+      "id": "56b89cbb",
+      "arabic_term": "دورة التكييف",
+      "standard_category": "General",
+      "english_term": "AC system",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "نظام تكييف الهواء",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "e1bfebdc": {
+      "id": "e1bfebdc",
+      "arabic_term": "غاز",
+      "standard_category": "General",
+      "english_term": "AC refrigerant gas",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "غاز التبريد",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "7c47a27c": {
+      "id": "7c47a27c",
+      "arabic_term": "رداتوري / راداتوري",
+      "standard_category": "General",
+      "english_term": "Radiator",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "55c87931": {
+      "id": "55c87931",
+      "arabic_term": "مناكوطي",
+      "standard_category": "General",
+      "english_term": "Radiator connecting rubber hose",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الخرطوم المطاطي الموصل للرادياتير",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "f69d777a": {
+      "id": "f69d777a",
+      "arabic_term": "طوبو",
+      "standard_category": "General",
+      "english_term": "Pipe / hose / tube",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "أنبوب أو خرطوم عمومًا",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "ea578744": {
+      "id": "ea578744",
+      "arabic_term": "خرطوم / خراطيم",
+      "standard_category": "General",
+      "english_term": "Hose (general term)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "edeacf9c": {
+      "id": "edeacf9c",
+      "arabic_term": "فيلترو",
+      "standard_category": "General",
+      "english_term": "Filter (oil, air, fuel)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الفلتر (زيت/هواء/وقود)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "9c91f34f": {
+      "id": "9c91f34f",
+      "arabic_term": "فرينو / فرامل",
+      "standard_category": "General",
+      "english_term": "Brakes (Italian: *freno*)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "08c21916": {
+      "id": "08c21916",
+      "arabic_term": "ريجسترو فرامل",
+      "standard_category": "General",
+      "english_term": "Brake adjustment",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ضبط وتعيير الفرامل",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "3c921f5a": {
+      "id": "3c921f5a",
+      "arabic_term": "فرودي",
+      "standard_category": "General",
+      "english_term": "Brake shoes (drum brakes)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "تيل الفرامل الطبلية (الفرامل الخلفية)",
+      "updated_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "415d7e65": {
+      "id": "415d7e65",
+      "arabic_term": "طنبور / طمبور",
+      "standard_category": "General",
+      "english_term": "Brake drum",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "12235ce9": {
+      "id": "12235ce9",
+      "arabic_term": "مرميطة / مارميطا / شكمان",
+      "standard_category": "General",
+      "english_term": "Muffler / exhaust silencer",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "c55c5697": {
+      "id": "c55c5697",
+      "arabic_term": "رقبة",
+      "standard_category": "General",
+      "english_term": "Connector neck/pipe (e.g. muffler connector pipe)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "عنق أو وصلة أنبوبية (مثل: رقبة مرميطة = أنبوب توصيل الشكمان)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "2e5c669f": {
+      "id": "2e5c669f",
+      "arabic_term": "مزطوري / مزاطوري / أمورتيزاتوري",
+      "standard_category": "General",
+      "english_term": "Shock absorber",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "9775d61a": {
+      "id": "9775d61a",
+      "arabic_term": "كوشينتي / كوشينيتي",
+      "standard_category": "General",
+      "english_term": "Bearing (wheel bearing / clutch release bearing)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "bb4c582b": {
+      "id": "bb4c582b",
+      "arabic_term": "برولة / بروليات",
+      "standard_category": "General",
+      "english_term": "Bearing bushing",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "6e77e536": {
+      "id": "6e77e536",
+      "arabic_term": "كروتشيرة / كروتشيرات",
+      "standard_category": "General",
+      "english_term": "Universal (spider) joint",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "061bada1": {
+      "id": "061bada1",
+      "arabic_term": "سكاتولا / سكاتلة",
+      "standard_category": "General",
+      "english_term": "Steering box / rack",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "8b4502fe": {
+      "id": "8b4502fe",
+      "arabic_term": "دومان",
+      "standard_category": "General",
+      "english_term": "Steering wheel",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "عجلة القيادة (مرادف)",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "cc8f993e": {
+      "id": "cc8f993e",
+      "arabic_term": "براتشو / براتشّو",
+      "standard_category": "General",
+      "english_term": "Control arm (confirmed visually)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "9d78becb": {
+      "id": "9d78becb",
+      "arabic_term": "دراع (ذراع)",
+      "standard_category": "General",
+      "english_term": "Control arm",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ذراع التعليق",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "701a5678": {
+      "id": "701a5678",
+      "arabic_term": "فوزيلي / فازيلي",
+      "standard_category": "General",
+      "english_term": "Ball joint (confirmed by two sources)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "f45346f0": {
+      "id": "f45346f0",
+      "arabic_term": "نوتشي / نيوتشي",
+      "standard_category": "General",
+      "english_term": "Tie rod end (confirmed visually)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "5235d9da": {
+      "id": "5235d9da",
+      "arabic_term": "كروتشيرة خارجية / كرشيرة خارجية",
+      "standard_category": "General",
+      "english_term": "Outer CV joint (confirmed visually)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "79890e93": {
+      "id": "79890e93",
+      "arabic_term": "قومة",
+      "standard_category": "General",
+      "english_term": "Rubber / tire (Italian: *gomma*); also used loosely for small rubber bushings in context",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "المطاط عمومًا أو الإطار (الأصل)، وتُستخدم أيضًا لأي جلبة أو قطعة مطاطية صغيرة حسب السياق (مثل: قومة الدراع)",
+      "notes": "context-dependent — meaning varies by surrounding text",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "e39bf584": {
+      "id": "e39bf584",
+      "arabic_term": "بوكلات",
+      "standard_category": "General",
+      "english_term": "Retaining clips/rings",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "حلقات أو مشابك تثبيت",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "6050a2bd": {
+      "id": "6050a2bd",
+      "arabic_term": "دفاف / دفافات",
+      "standard_category": "General",
+      "english_term": "Idler pulley / tensioner pulley",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "6bbc847b": {
+      "id": "6bbc847b",
+      "arabic_term": "ميزان",
+      "standard_category": "General",
+      "english_term": "Wheel alignment",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ضبط زوايا العجلات",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "ec90c030": {
+      "id": "ec90c030",
+      "arabic_term": "تعديل زاوية",
+      "standard_category": "General",
+      "english_term": "Alignment adjustment (camber/toe)",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ضبط زاوية العجلات",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "2585a207": {
+      "id": "2585a207",
+      "arabic_term": "ترصيص",
+      "standard_category": "General",
+      "english_term": "Wheel balancing",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "موازنة الإطارات",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "53b2f4d3": {
+      "id": "53b2f4d3",
+      "arabic_term": "مفتاح إنجليزي",
+      "standard_category": "General",
+      "english_term": "Adjustable wrench / spanner",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "مفتاح ربط قابل للتعديل",
+      "updated_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "217cbc50": {
+      "id": "217cbc50",
+      "arabic_term": "ورشة نافطة",
+      "standard_category": "General",
+      "english_term": "Diesel / heavy-vehicle workshop",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ورشة السيارات والشاحنات الديزل (الثقيلة)",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "3e733d4e": {
+      "id": "3e733d4e",
+      "arabic_term": "ورشة بنزين",
+      "standard_category": "General",
+      "english_term": "Petrol / light-vehicle workshop",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "ورشة السيارات الخفيفة (بنزين)",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "5f1b9d0e": {
+      "id": "5f1b9d0e",
+      "arabic_term": "ورشة سمكرة وطلاء",
+      "standard_category": "General",
+      "english_term": "Body & paint shop",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "قسم الهيكل والدهان",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "76e3451f": {
+      "id": "76e3451f",
+      "arabic_term": "GR",
+      "standard_category": "General",
+      "english_term": "General Repair",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "b904d162": {
+      "id": "b904d162",
+      "arabic_term": "PM&GR",
+      "standard_category": "General",
+      "english_term": "Preventive Maintenance & General Repair",
+      "created_at": "2026-07-23T07:18:58.831920+00:00",
+      "fusha_meaning": "الصيانة الوقائية والإصلاح العام",
+      "updated_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "bb67fbe7": {
+      "id": "bb67fbe7",
+      "arabic_term": "COF",
+      "standard_category": "General",
+      "english_term": "Change Oil & Filter",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "c1bbeccc": {
+      "id": "c1bbeccc",
+      "arabic_term": "MECHANIC",
+      "standard_category": "General",
+      "english_term": "Mechanical section",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "6707ade0": {
+      "id": "6707ade0",
+      "arabic_term": "BODY",
+      "standard_category": "General",
+      "english_term": "Body section",
+      "created_at": "2026-07-23T07:18:58.831920+00:00"
+    },
+    "fddb034d": {
+      "id": "fddb034d",
+      "arabic_term": "اليد العاملة",
+      "standard_category": "General",
+      "english_term": "Labor charge / labor cost",
+      "fusha_meaning": "أجرة العمل / تكلفة العمالة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.525896+00:00"
+    },
+    "98cac656": {
+      "id": "98cac656",
+      "arabic_term": "يد عاملة",
+      "standard_category": "General",
+      "english_term": "Labor charge / labor cost",
+      "fusha_meaning": "أجرة العمل / تكلفة العمالة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "dc6970de": {
+      "id": "dc6970de",
+      "arabic_term": "سيرفيز",
+      "standard_category": "General",
+      "english_term": "Service",
+      "fusha_meaning": "خدمة أو صيانة عامة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "a553b763": {
+      "id": "a553b763",
+      "arabic_term": "سيرفز",
+      "standard_category": "General",
+      "english_term": "Service",
+      "fusha_meaning": "خدمة أو صيانة عامة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "2adcd462": {
+      "id": "2adcd462",
+      "arabic_term": "معالجة صدأ",
+      "standard_category": "Body & Paint",
+      "english_term": "Rust treatment",
+      "fusha_meaning": "إزالة ومعالجة الصدأ",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "7b5a1b48": {
+      "id": "7b5a1b48",
+      "arabic_term": "صدا",
+      "standard_category": "Body & Paint",
+      "english_term": "Rust treatment",
+      "fusha_meaning": "إزالة ومعالجة الصدأ",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "4b804b36": {
+      "id": "4b804b36",
+      "arabic_term": "بوليش",
+      "standard_category": "Body & Paint",
+      "english_term": "Polishing",
+      "fusha_meaning": "تلميع الطلاء",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "10b827f4": {
+      "id": "10b827f4",
+      "arabic_term": "بولش",
+      "standard_category": "Body & Paint",
+      "english_term": "Polishing",
+      "fusha_meaning": "تلميع الطلاء",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "1691bbba": {
+      "id": "1691bbba",
+      "arabic_term": "خبش",
+      "standard_category": "Body & Paint",
+      "english_term": "Surface scuff/scratch",
+      "fusha_meaning": "خدش سطحي بسيط",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "b5004188": {
+      "id": "b5004188",
+      "arabic_term": "خبشة",
+      "standard_category": "Body & Paint",
+      "english_term": "Surface scuff/scratch",
+      "fusha_meaning": "خدش سطحي بسيط",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "6c5b1081": {
+      "id": "6c5b1081",
+      "arabic_term": "تصفيح",
+      "standard_category": "Body & Paint",
+      "english_term": "Vehicle armor plating",
+      "fusha_meaning": "تدريع السيارة (للسيارات الأمنية)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "f91c10cc": {
+      "id": "f91c10cc",
+      "arabic_term": "مصفحة",
+      "standard_category": "Body & Paint",
+      "english_term": "Vehicle armor plating",
+      "fusha_meaning": "تدريع السيارة (للسيارات الأمنية)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "48b8b8a7": {
+      "id": "48b8b8a7",
+      "arabic_term": "براونطي",
+      "standard_category": "Body & Paint",
+      "english_term": "Bumper",
+      "fusha_meaning": "الصدّام (المصد) الأمامي أو الخلفي",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "06a32aaa": {
+      "id": "06a32aaa",
+      "arabic_term": "برونطي",
+      "standard_category": "Body & Paint",
+      "english_term": "Bumper",
+      "fusha_meaning": "الصدّام (المصد) الأمامي أو الخلفي",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "2ad74a5b": {
+      "id": "2ad74a5b",
+      "arabic_term": "براولطي",
+      "standard_category": "Body & Paint",
+      "english_term": "Bumper",
+      "fusha_meaning": "الصدّام (المصد) الأمامي أو الخلفي",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.526901+00:00"
+    },
+    "91fbb823": {
+      "id": "91fbb823",
+      "arabic_term": "كوفنو",
+      "standard_category": "Body & Paint",
+      "english_term": "Hood / bonnet",
+      "fusha_meaning": "غطاء المحرك الأمامي",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "2caac64c": {
+      "id": "2caac64c",
+      "arabic_term": "كوفني",
+      "standard_category": "Body & Paint",
+      "english_term": "Hood / bonnet",
+      "fusha_meaning": "غطاء المحرك الأمامي",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "3276062b": {
+      "id": "3276062b",
+      "arabic_term": "باطنيات",
+      "standard_category": "Body & Paint",
+      "english_term": "Brake pads",
+      "fusha_meaning": "تيل الفرامل (فحمات الفرامل القرصية)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "3baf12f5": {
+      "id": "3baf12f5",
+      "arabic_term": "تابلو",
+      "standard_category": "Body & Paint",
+      "english_term": "Dashboard",
+      "fusha_meaning": "لوحة القيادة (الداشبورد)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "98b23865": {
+      "id": "98b23865",
+      "arabic_term": "سطب",
+      "standard_category": "Body & Paint",
+      "english_term": "Rear stop/tail light",
+      "fusha_meaning": "إشارة التوقف الخلفية (الستوب)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "98175249": {
+      "id": "98175249",
+      "arabic_term": "اسطب",
+      "standard_category": "Body & Paint",
+      "english_term": "Rear stop/tail light",
+      "fusha_meaning": "إشارة التوقف الخلفية (الستوب)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "437a21ce": {
+      "id": "437a21ce",
+      "arabic_term": "مونوبلوكو",
+      "standard_category": "Engine",
+      "english_term": "Cylinder block",
+      "fusha_meaning": "كتلة الاسطوانات (البلوك)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "40e1d9f3": {
+      "id": "40e1d9f3",
+      "arabic_term": "كرونة",
+      "standard_category": "Engine",
+      "english_term": "Crown wheel / differential ring gear",
+      "fusha_meaning": "تاج الدفرنس (ترس التاج)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "610feed9": {
+      "id": "610feed9",
+      "arabic_term": "كارونة",
+      "standard_category": "Engine",
+      "english_term": "Crown wheel / differential ring gear",
+      "fusha_meaning": "تاج الدفرنس (ترس التاج)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "5071fb80": {
+      "id": "5071fb80",
+      "arabic_term": "ديفرنزيالي",
+      "standard_category": "Engine",
+      "english_term": "Differential assembly",
+      "fusha_meaning": "مجموعة الدفرنس الكاملة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "5438aa5a": {
+      "id": "5438aa5a",
+      "arabic_term": "كمبيو",
+      "standard_category": "Engine",
+      "english_term": "Gearbox / transmission",
+      "fusha_meaning": "علبة التروس (الفتيس)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.527898+00:00"
+    },
+    "b9651a0c": {
+      "id": "b9651a0c",
+      "arabic_term": "بوبينة",
+      "standard_category": "Engine",
+      "english_term": "Ignition coil",
+      "fusha_meaning": "ملف إشعال الشرارة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "deb08334": {
+      "id": "deb08334",
+      "arabic_term": "برولة",
+      "standard_category": "Engine",
+      "english_term": "Bearing bushing",
+      "fusha_meaning": "الجلبة أو البطانة المعدنية للمحمل",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "52526fa0": {
+      "id": "52526fa0",
+      "arabic_term": "بروليات",
+      "standard_category": "Engine",
+      "english_term": "Bearing bushing",
+      "fusha_meaning": "الجلبة أو البطانة المعدنية للمحمل",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "06f61710": {
+      "id": "06f61710",
+      "arabic_term": "قرسيوني",
+      "standard_category": "Engine",
+      "english_term": "Gasket",
+      "fusha_meaning": "الحشية أو الجوان، مثل: قرسيوني كوبيركو = حشية غطاء الصمامات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "521fdf67": {
+      "id": "521fdf67",
+      "arabic_term": "كرسيوني (بالقاف)",
+      "standard_category": "Engine",
+      "english_term": "Gasket",
+      "fusha_meaning": "الحشية أو الجوان، مثل: قرسيوني كوبيركو = حشية غطاء الصمامات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "ab52a45f": {
+      "id": "ab52a45f",
+      "arabic_term": "فاشي",
+      "standard_category": "Engine",
+      "english_term": "Gasket",
+      "fusha_meaning": "الحشية أو الجوان، مثل: قرسيوني كوبيركو = حشية غطاء الصمامات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "ee75d77d": {
+      "id": "ee75d77d",
+      "arabic_term": "ستاقوبا",
+      "standard_category": "Engine",
+      "english_term": "Oil pan / sump",
+      "fusha_meaning": "حوض/كرتير زيت المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "8de7c469": {
+      "id": "8de7c469",
+      "arabic_term": "تكتيك",
+      "standard_category": "Engine",
+      "english_term": "Abnormal engine knock/rattle noise",
+      "fusha_meaning": "أصوات طرق أو فرقعة غير طبيعية من المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "6e29cfce": {
+      "id": "6e29cfce",
+      "arabic_term": "فطفطة",
+      "standard_category": "Engine",
+      "english_term": "Abnormal engine knock/rattle noise",
+      "fusha_meaning": "أصوات طرق أو فرقعة غير طبيعية من المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "3fc9d441": {
+      "id": "3fc9d441",
+      "arabic_term": "جربيع",
+      "standard_category": "Engine",
+      "english_term": "Abnormal engine knock/rattle noise",
+      "fusha_meaning": "أصوات طرق أو فرقعة غير طبيعية من المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "7f986013": {
+      "id": "7f986013",
+      "arabic_term": "باواجي",
+      "standard_category": "Engine",
+      "english_term": "Spark plugs",
+      "fusha_meaning": "شمعات الاحتراق",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.528897+00:00"
+    },
+    "0dec88ea": {
+      "id": "0dec88ea",
+      "arabic_term": "خيط",
+      "standard_category": "Electrical",
+      "english_term": "Electrical wires",
+      "fusha_meaning": "أسلاك كهربائية",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "aaf66128": {
+      "id": "aaf66128",
+      "arabic_term": "خيوط",
+      "standard_category": "Electrical",
+      "english_term": "Electrical wires",
+      "fusha_meaning": "أسلاك كهربائية",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "00260ec6": {
+      "id": "00260ec6",
+      "arabic_term": "لامبة",
+      "standard_category": "Electrical",
+      "english_term": "Warning light / indicator bulb",
+      "fusha_meaning": "مصباح تحذير أو إضاءة في لوحة العدادات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "c3526e98": {
+      "id": "c3526e98",
+      "arabic_term": "لامبات",
+      "standard_category": "Electrical",
+      "english_term": "Warning light / indicator bulb",
+      "fusha_meaning": "مصباح تحذير أو إضاءة في لوحة العدادات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "7fb70034": {
+      "id": "7fb70034",
+      "arabic_term": "فيوزيبيلي",
+      "standard_category": "Electrical",
+      "english_term": "Fuses",
+      "fusha_meaning": "الفيوزات",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "56111125": {
+      "id": "56111125",
+      "arabic_term": "فاريتي",
+      "standard_category": "Electrical",
+      "english_term": "Fog lamp / front combination lights",
+      "fusha_meaning": "كشافات الضباب أو المصابيح الأمامية المجمّعة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "64739131": {
+      "id": "64739131",
+      "arabic_term": "فريجة",
+      "standard_category": "Electrical",
+      "english_term": "Fog lamp / front combination lights",
+      "fusha_meaning": "كشافات الضباب أو المصابيح الأمامية المجمّعة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "f1eb4187": {
+      "id": "f1eb4187",
+      "arabic_term": "رداتوري",
+      "standard_category": "Cooling",
+      "english_term": "Radiator",
+      "fusha_meaning": "المشعاع (الرادياتير)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "af6afb15": {
+      "id": "af6afb15",
+      "arabic_term": "خرطوم",
+      "standard_category": "Cooling",
+      "english_term": "Hose",
+      "fusha_meaning": "أنبوب مطاطي مرن (فصحى، مستخدم أيضًا في الورشة)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "0abe3622": {
+      "id": "0abe3622",
+      "arabic_term": "خراطيم",
+      "standard_category": "Cooling",
+      "english_term": "Hose",
+      "fusha_meaning": "أنبوب مطاطي مرن (فصحى، مستخدم أيضًا في الورشة)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "63257b27": {
+      "id": "63257b27",
+      "arabic_term": "فرينو",
+      "standard_category": "Brakes",
+      "english_term": "Brakes",
+      "fusha_meaning": "المكابح",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "7be1a2ab": {
+      "id": "7be1a2ab",
+      "arabic_term": "فرامل",
+      "standard_category": "Brakes",
+      "english_term": "Brakes",
+      "fusha_meaning": "المكابح",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "ab4e40af": {
+      "id": "ab4e40af",
+      "arabic_term": "طنبور",
+      "standard_category": "Brakes",
+      "english_term": "Brake drum",
+      "fusha_meaning": "أسطوانة الفرامل الخلفية",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.529902+00:00"
+    },
+    "b6c4c918": {
+      "id": "b6c4c918",
+      "arabic_term": "مرميطة",
+      "standard_category": "Brakes",
+      "english_term": "Muffler / exhaust silencer",
+      "fusha_meaning": "كاتم صوت العادم (الشكمان)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "b716584d": {
+      "id": "b716584d",
+      "arabic_term": "مارميطا",
+      "standard_category": "Brakes",
+      "english_term": "Muffler / exhaust silencer",
+      "fusha_meaning": "كاتم صوت العادم (الشكمان)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "58a73361": {
+      "id": "58a73361",
+      "arabic_term": "شكمان",
+      "standard_category": "Brakes",
+      "english_term": "Muffler / exhaust silencer",
+      "fusha_meaning": "كاتم صوت العادم (الشكمان)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "f9908082": {
+      "id": "f9908082",
+      "arabic_term": "مزاطوري",
+      "standard_category": "Suspension",
+      "english_term": "Shock absorber",
+      "fusha_meaning": "ماص الصدمات (المساعد)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "f4105187": {
+      "id": "f4105187",
+      "arabic_term": "أمورتيزاتوري",
+      "standard_category": "Suspension",
+      "english_term": "Shock absorber",
+      "fusha_meaning": "ماص الصدمات (المساعد)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "a602b63a": {
+      "id": "a602b63a",
+      "arabic_term": "كوشينتي",
+      "standard_category": "Suspension",
+      "english_term": "Bearing",
+      "fusha_meaning": "الكرسي (المحمل/البلي بيرنغ) — يشمل محمل العجلة ومحمل تحرير القابض حسب السياق",
+      "notes": "context-dependent — meaning varies by surrounding text",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "376b358a": {
+      "id": "376b358a",
+      "arabic_term": "كروتشيرة",
+      "standard_category": "Suspension",
+      "english_term": "Universaljoint",
+      "fusha_meaning": "الصليبة (مفصل الكردان)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "01cb8c69": {
+      "id": "01cb8c69",
+      "arabic_term": "كروتشيرات",
+      "standard_category": "Suspension",
+      "english_term": "Universaljoint",
+      "fusha_meaning": "الصليبة (مفصل الكردان)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "4658cde1": {
+      "id": "4658cde1",
+      "arabic_term": "سكاتولا",
+      "standard_category": "Suspension",
+      "english_term": "Steering box / rack",
+      "fusha_meaning": "علبة التوجيه",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "fe11263f": {
+      "id": "fe11263f",
+      "arabic_term": "براتشّو",
+      "standard_category": "Suspension",
+      "english_term": "Control arm",
+      "fusha_meaning": "ذراع التعليق (تأكيد بصري من صاحب المركز)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "5f199e2a": {
+      "id": "5f199e2a",
+      "arabic_term": "فوزيلي",
+      "standard_category": "Suspension",
+      "english_term": "Ball joint",
+      "fusha_meaning": "مفصل التعليق الكروي (مؤكَّد من مصدرين)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "b338a927": {
+      "id": "b338a927",
+      "arabic_term": "نيوتشي",
+      "standard_category": "Suspension",
+      "english_term": "Tie rod end",
+      "fusha_meaning": "رأس ذراع التوجيه (تأكيد بصري من صاحب المركز)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "5a23366a": {
+      "id": "5a23366a",
+      "arabic_term": "كروتشيرة خارجية",
+      "standard_category": "Suspension",
+      "english_term": "Outer CV joint",
+      "fusha_meaning": "مفصل السرعة الثابتة الخارجي (طرف عمود الدفع)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "454ff9da": {
+      "id": "454ff9da",
+      "arabic_term": "كرشيرة خارجية",
+      "standard_category": "Suspension",
+      "english_term": "Outer CV joint",
+      "fusha_meaning": "مفصل السرعة الثابتة الخارجي (طرف عمود الدفع)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "774bc236": {
+      "id": "774bc236",
+      "arabic_term": "ياي",
+      "standard_category": "Suspension",
+      "english_term": "Coil spring",
+      "fusha_meaning": "نابض حلزوني (سبرنك)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "29e36144": {
+      "id": "29e36144",
+      "arabic_term": "مولا",
+      "standard_category": "Suspension",
+      "english_term": "Coil spring",
+      "fusha_meaning": "نابض حلزوني (سبرنك)",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "2b3f58fa": {
+      "id": "2b3f58fa",
+      "arabic_term": "دفاف",
+      "standard_category": "Suspension",
+      "english_term": "Idler pulley / tensioner pulley",
+      "fusha_meaning": "بكرات الشداد أو بكرات التوجيه التي يلتف عليها سير المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "a8304a25": {
+      "id": "a8304a25",
+      "arabic_term": "دفافات",
+      "standard_category": "Suspension",
+      "english_term": "Idler pulley / tensioner pulley",
+      "fusha_meaning": "بكرات الشداد أو بكرات التوجيه التي يلتف عليها سير المحرك",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.530898+00:00"
+    },
+    "fb2a0854": {
+      "id": "fb2a0854",
+      "arabic_term": "أوطانطة",
+      "standard_category": "General",
+      "english_term": "Heavy truck / transporter",
+      "fusha_meaning": "شاحنة نقل ثقيلة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "0b01dcde": {
+      "id": "0b01dcde",
+      "arabic_term": "طانطة",
+      "standard_category": "General",
+      "english_term": "Heavy truck / transporter",
+      "fusha_meaning": "شاحنة نقل ثقيلة",
+      "notes": "",
+      "created_at": "2026-07-23T08:16:10.532329+00:00"
+    },
+    "317fea24": {
+      "id": "317fea24",
+      "arabic_term": "باطني",
+      "standard_category": "Brakes",
+      "english_term": "Brake Pads",
+      "fusha_meaning": "",
+      "notes": "",
+      "created_at": "2026-07-23T08:21:27.874208+00:00"
+    },
+    "0cd7a3c5": {
+      "id": "0cd7a3c5",
+      "arabic_term": "فرامل_اختبار",
+      "standard_category": "Brakes",
+      "english_term": "",
+      "fusha_meaning": "",
+      "notes": "",
+      "created_at": "2026-07-23T08:21:27.903928+00:00"
+    },
+    "92103fbc": {
+      "id": "92103fbc",
+      "arabic_term": "محرك_بحث",
+      "standard_category": "Engine",
+      "english_term": "",
+      "fusha_meaning": "",
+      "notes": "",
+      "created_at": "2026-07-23T08:21:27.930264+00:00"
+    },
+    "03bb8ec9": {
+      "id": "03bb8ec9",
+      "arabic_term": "باطني",
+      "standard_category": "Brakes",
+      "english_term": "Disc Brake Pads",
+      "fusha_meaning": "",
+      "notes": "",
+      "created_at": "2026-07-23T08:21:27.949165+00:00",
+      "updated_at": "2026-07-23T08:21:27.961878+00:00"
+    },
+    "96227db7": {
+      "id": "96227db7",
+      "arabic_term": "طرمبة_ماء",
+      "standard_category": "Cooling",
+      "english_term": "Water Pump",
+      "fusha_meaning": "",
+      "notes": "",
+      "created_at": "2026-07-23T08:21:39.783664+00:00"
     }
   },
-  "pending": {}
+  "pending": {
+    "8165dc7e": {
+      "id": "8165dc7e",
+      "term_text": "طرمبة",
+      "query_text": "كشف طرمبة زيت",
+      "status": "pending",
+      "created_at": "2026-07-23T08:21:39.750796+00:00"
+    },
+    "19c2396b": {
+      "id": "19c2396b",
+      "term_text": "طرمبة",
+      "query_text": "كشف طرمبة زيت",
+      "status": "resolved",
+      "created_at": "2026-07-23T08:21:39.771186+00:00",
+      "resolved_term_id": "96227db7"
+    }
+  }
 }

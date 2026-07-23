@@ -10,7 +10,8 @@ os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
 from config import settings
 from dictionary_store import dictionary_store
 from embedding_router import embedding_router
-from ingestion.docx_parser import parse_dictionary
+from ingestion.docx_parser import parse_dictionary as parse_docx
+from ingestion.md_parser import parse_markdown
 from ingestion.normalizer import Normalizer
 from ingestion.xlsx_parser import LaborRecord, parse_xlsx
 from vector_store import add_to_collection, get_or_create_collection, reset_collection
@@ -139,16 +140,22 @@ def run_pipeline(
         print(f"       Loaded {len(records)} records ({new_count} new after dedup)")
     print(f"       Total unique records: {len(all_records)}")
 
-    # 2. Parse dictionary
+    # 2. Parse dictionary — auto-detect format (.md or .docx)
     normalizer: Normalizer | None = None
     if docx_path and Path(docx_path).exists():
-        print(f"\n[2/5] Parsing dictionary: {docx_path}")
-        dictionary = parse_dictionary(docx_path)
+        ext = Path(docx_path).suffix.lower()
+        print(f"\n[2/5] Parsing dictionary: {docx_path} (format: {ext})")
+        if ext == ".md":
+            dictionary = parse_markdown(docx_path)
+        else:
+            dictionary = parse_docx(docx_path)
         normalizer = Normalizer(dictionary)
         print(f"       Loaded {len(dictionary)} terms across categories")
-        # Seed into persistent dictionary store
-        seeded = dictionary_store.seed_terms(dictionary)
-        print(f"       Seeded {seeded} terms into dictionary store")
+        # Seed into persistent dictionary store (upsert: adds new terms,
+        # backfills fusha_meaning/notes on existing ones without duplicating)
+        seed_result = dictionary_store.seed_or_update_terms(dictionary)
+        print(f"       Dictionary store: +{seed_result['added']} new, "
+              f"{seed_result['updated']} updated with fusha meaning/notes")
     else:
         print("\n[2/5] No dictionary provided, skipping normalization")
 
