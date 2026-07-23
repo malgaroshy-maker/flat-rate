@@ -7,6 +7,11 @@ import '../domain/chat_models.dart';
 final chatRepositoryProvider =
     Provider<ChatRepository>((ref) => ChatRepository());
 
+/// Latest progress status from the backend ("searching" / "thinking"),
+/// null once the first text token arrives. Consumed by the chat screen to
+/// show a typing/progress indicator instead of a blank wait.
+final chatStatusProvider = StateProvider<String?>((ref) => null);
+
 final sessionsProvider = FutureProvider<List<ChatSession>>((ref) async {
   final rows = await LocalDb().getSessions();
   return rows
@@ -21,11 +26,12 @@ final sessionsProvider = FutureProvider<List<ChatSession>>((ref) async {
 
 class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
   final ChatRepository _repo;
+  final Ref _ref;
   String? _sessionId;
   StreamSubscription<String>? _subscription;
   String _fullResponse = '';
 
-  ChatNotifier(this._repo) : super(const AsyncValue.data([]));
+  ChatNotifier(this._repo, this._ref) : super(const AsyncValue.data([]));
 
   String? get sessionId => _sessionId;
 
@@ -65,6 +71,7 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
   void send(String message, {String lang = 'ar'}) {
     _subscription?.cancel();
     _fullResponse = '';
+    _ref.read(chatStatusProvider.notifier).state = null;
     final msgs = <ChatMessage>[...(state.valueOrNull ?? [])];
     state = const AsyncValue.loading();
 
@@ -97,10 +104,16 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
 
     _subscription = stream.listen(
       (data) {
-        if (data.startsWith('__session_id:')) {
-          _sessionId = data.substring(14);
+        if (data.startsWith(sessionIdEventPrefix)) {
+          _sessionId = data.substring(sessionIdEventPrefix.length);
           return;
         }
+        if (data.startsWith(statusEventPrefix)) {
+          _ref.read(chatStatusProvider.notifier).state =
+              data.substring(statusEventPrefix.length);
+          return;
+        }
+        _ref.read(chatStatusProvider.notifier).state = null;
         buffer.write(data);
         _fullResponse = buffer.toString();
         state = AsyncValue.data([
@@ -109,9 +122,11 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
         ]);
       },
       onError: (err) {
+        _ref.read(chatStatusProvider.notifier).state = null;
         state = AsyncValue.error(err, StackTrace.current);
       },
       onDone: () {
+        _ref.read(chatStatusProvider.notifier).state = null;
         if (buffer.isEmpty) {
           state = AsyncValue.data(msgs);
         }
@@ -156,5 +171,5 @@ class ChatNotifier extends StateNotifier<AsyncValue<List<ChatMessage>>> {
 
 final chatProvider = StateNotifierProvider<ChatNotifier,
     AsyncValue<List<ChatMessage>>>((ref) {
-  return ChatNotifier(ref.watch(chatRepositoryProvider));
+  return ChatNotifier(ref.watch(chatRepositoryProvider), ref);
 });

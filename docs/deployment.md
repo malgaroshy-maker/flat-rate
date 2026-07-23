@@ -104,6 +104,74 @@ npm run dev
 
 ---
 
+## Option 4: Cloudflare Tunnel (public URL, free)
+
+The easiest way to make your local backend accessible from anywhere — no server, no cost.
+
+### How it works
+```
+Phone/Mobile App → Cloudflare Edge → Encrypted QUIC Tunnel → Your PC (localhost:8000)
+```
+
+### Setup (one-time)
+
+```bash
+# Windows (PowerShell as admin)
+iwr https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe -OutFile "$env:ProgramFiles\cloudflared\cloudflared.exe"
+# Add to PATH: setx PATH "$env:PATH;$env:ProgramFiles\cloudflared"
+```
+
+### Usage
+
+```bash
+# 1. Start backend (keep running)
+start.bat
+
+# 2. Start tunnel in a new terminal
+tunnel.bat
+```
+
+The tunnel prints a URL like `https://britannica-nominated-scotia-patterns.trycloudflare.com`. Copy this URL into your mobile app config:
+
+```dart
+// flutter_app/lib/core/constants/api_config.dart
+static const String baseUrl = 'https://YOUR-TUNNEL.trycloudflare.com';
+```
+
+Then rebuild the Flutter APK. The URL stays the same as long as the `tunnel.bat` window stays open.
+
+### What didn't work (and why)
+
+| Service | Issue |
+|---------|-------|
+| **Fly.io** (free) | 1GB RAM insufficient for sentence-transformers (~500MB) + backend |
+| **Gemini free tier** | Embedding quota exhausted after 1-2 queries (need 514 chunks) |
+| **ngrok** | Blocked by ISP in some regions (ERR_NGROK_9040) |
+| **serveo** | Unstable SSH tunnel, 502 errors |
+
+---
+
+## Option 5: Render (current production backend)
+
+The live backend is deployed on [Render](https://render.com) free tier at `https://flat-rate.onrender.com`, wired to auto-deploy on every push to `master`. ChromaDB is baked into the Docker image (Render's free tier disk is ephemeral, so it can't be written at runtime).
+
+### Cold starts
+
+Render free-tier web services spin down after ~15 minutes with no incoming traffic, then take 30–60s to wake on the next request. Two mitigations are in place:
+
+1. **Keep-alive ping** — a free [cron-job.org](https://cron-job.org) job hits `GET https://flat-rate.onrender.com/api/health` every 10 minutes during workshop hours (09:00–17:00, Africa/Tripoli, Sunday–Thursday + Saturday — Friday excluded as the weekend day). Crontab: `0,10,20,30,40,50 9-17 * * 0-4,6`. Outside that window the service is allowed to sleep to conserve free-tier instance hours, since no one is using it.
+2. **App-side warm-up** — the Flutter app fires a fire-and-forget `GET /api/health` as soon as the chat screen opens (`ChatRepository.warmUp()`), so a cold start overlaps with the user typing instead of happening after they hit send.
+
+If workshop hours change, update the cron-job.org schedule's Hours/Days-of-week fields to match.
+
+### Verifying a deploy went live
+
+```bash
+curl https://flat-rate.onrender.com/api/health
+```
+
+---
+
 ## Production hardening
 
 Before deploying to production:

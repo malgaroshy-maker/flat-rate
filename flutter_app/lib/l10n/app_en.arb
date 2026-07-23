@@ -1,0 +1,76 @@
+{
+  "@@locale": "en",
+  "appTitle": "Labor Cost Estimator",
+  "searchTab": "Search",
+  "chatTab": "Chat",
+  "dictionaryTab": "Dictionary",
+  "pendingTab": "Review",
+  "settingsTab": "Settings",
+  "searchHint": "Search by job, model, or keyword...",
+  "searchButton": "Search",
+  "confidence": "Confidence",
+  "high": "High",
+  "medium": "Medium",
+  "low": "Low",
+  "median": "Median",
+  "records": "records",
+  "details": "Details",
+  "noResults": "No results found",
+  "enterQuery": "Enter a query to search historical data",
+  "loading": "Loading...",
+  "retry": "Retry",
+  "languageLabel": "Interface Language",
+  "modeLabel": "Mode",
+  "systemInfo": "System Info",
+  "backendUrl": "Backend URL",
+  "llmBackend": "LLM Backend",
+  "embeddingModel": "Embedding Model",
+  "cloudMode": "Cloud (Gemini)",
+  "localMode": "Local (Offline)",
+  "exportPdf": "Export PDF",
+  "sessions": "Sessions",
+  "newChat": "New Chat",
+  "chatGreeting": "Hello! Ask me about any maintenance job.",
+  "send": "Send",
+  "typeYourQuery": "Type your query...",
+  "aiAssistant": "AI Assistant",
+  "addTerm": "Add Term",
+  "editTerm": "Edit Term",
+  "add": "Add",
+  "save": "Save",
+  "arabicTerm": "Arabic term",
+  "category": "Category",
+  "englishTerm": "English term",
+  "searchDictionary": "Search dictionary...",
+  "noTermsFound": "No terms found",
+  "resolveTerm": "Resolve Term",
+  "resolveCount": "Resolve {count} terms",
+  "@resolveCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "resolveAll": "Resolve All",
+  "categoryForAll": "Category for all",
+  "noPendingTerms": "No pending terms",
+  "selectedCount": "{count} selected",
+  "@selectedCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "from": "From",
+  "messages": "{count} messages",
+  "@messages": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "noConversations": "No conversations",
+  "laborCostEstimator": "Labor Cost Estimator",
+  "language": "Language",
+  "offline": "offline",
+  "deleteSession": "Delete session",
+  "statusSearching": "Searching data...",
+  "statusThinking": "Thinking..."
+}

@@ -99,20 +99,36 @@ async def send_message(
         except Exception:
             history_messages = []
 
+    HEARTBEAT_SECONDS = 15.0
+
     async def event_stream():
         full_response = ""
 
         yield f"data: {json.dumps({'session_id': session_id, 'lang': lang})}\n\n"
 
         try:
-            async for chunk in stream_chat_response(message, session_id, lang, history_messages):
-                full_response += chunk
-                yield f"data: {json.dumps({'text': chunk})}\n\n"
-                await asyncio.sleep(0)
+            agen = stream_chat_response(message, session_id, lang, history_messages)
+            while True:
+                try:
+                    event = await asyncio.wait_for(agen.__anext__(), timeout=HEARTBEAT_SECONDS)
+                except asyncio.TimeoutError:
+                    # Keep the connection (and any intermediate proxy) alive
+                    # while waiting on a slow RAG search or LLM first-token.
+                    yield ": ping\n\n"
+                    continue
+                except StopAsyncIteration:
+                    break
+
+                if "status" in event:
+                    yield f"data: {json.dumps({'status': event['status']})}\n\n"
+                elif "text" in event:
+                    full_response += event["text"]
+                    yield f"data: {json.dumps({'text': event['text']})}\n\n"
 
             # Save assistant response
             _safe_add_message(session_id, "assistant", full_response)
             yield f"data: {json.dumps({'done': True, 'session_id': session_id})}\n\n"
+            yield "event: done\ndata: {}\n\n"
 
         except Exception as e:
             error_msg = f"Error: {e}"

@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
-from typing import AsyncGenerator
+from typing import Any, AsyncGenerator
 
 from embedding_router import embedding_router
 from llm_router import llm_router
@@ -16,18 +17,27 @@ async def stream_chat_response(
     session_id: str,
     lang: str = "ar",
     history_messages: list[dict] | None = None,
-) -> AsyncGenerator[str, None]:
-    """Generate a streaming chat response with RAG context and multi-turn history."""
+) -> AsyncGenerator[dict[str, Any], None]:
+    """Generate a streaming chat response with RAG context and multi-turn history.
 
-    # 1. Run RAG if no meaningful conversation history (0-1 messages = first query)
-    hits = []
-    if not history_messages or len(history_messages) <= 1:
-        query_result = execute_query(message, n_results=5)
-        hits = query_result.get("hits", [])
+    Yields event dicts:
+    - {"status": "searching" | "thinking"} — progress markers for the client
+      to render before the first model token arrives
+    - {"text": "..."} — a chunk of the assistant's reply
+    """
+
+    yield {"status": "searching"}
+
+    # 1. Run RAG on every message so follow-ups ("and the rear bumper?") also
+    # get fresh matches, not just the first message in a session.
+    query_result = await asyncio.to_thread(execute_query, message, n_results=5)
+    hits = query_result.get("hits", [])
     rag_context = format_rag_context(hits)
 
     # 2. Build system prompt
     system = build_system_prompt(lang)
+
+    yield {"status": "thinking"}
 
     # 3. Build the user message
     if history_messages:
@@ -48,10 +58,10 @@ and ask clarifying questions if needed."""
     # 4. Stream with multi-turn history
     if llm_router.use_cloud:
         async for chunk in _stream_cloud_multi(system, history_messages or [], user_content):
-            yield chunk
+            yield {"text": chunk}
     else:
         async for chunk in _stream_local_multi(system, history_messages or [], user_content):
-            yield chunk
+            yield {"text": chunk}
 
 
 async def _stream_cloud_multi(system: str, history: list[dict], user_content: str) -> AsyncGenerator[str, None]:
@@ -71,13 +81,15 @@ async def _stream_cloud_multi(system: str, history: list[dict], user_content: st
         temperature=0.3,
     )
 
-    response = client.models.generate_content_stream(
+    # Use the async client (client.aio) — the sync client.models.generate_content_stream()
+    # blocks the event loop while iterating, which serializes it with every other
+    # request FastAPI is serving and makes tokens arrive in bursts instead of
+    # smoothly. The async client yields control back to the loop between chunks.
+    async for chunk in await client.aio.models.generate_content_stream(
         model=llm_router.active_model,
         contents=contents,
         config=config,
-    )
-
-    for chunk in response:
+    ):
         if chunk.text:
             yield chunk.text
 
