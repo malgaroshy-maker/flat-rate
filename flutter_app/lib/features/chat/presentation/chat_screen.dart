@@ -18,7 +18,6 @@ class ChatScreen extends ConsumerStatefulWidget {
 class _ChatScreenState extends ConsumerState<ChatScreen> {
   final _inputController = TextEditingController();
   final _scrollController = ScrollController();
-  bool _showDrawer = false;
   bool _scrollScheduled = false;
   int _lastMsgCount = 0;
 
@@ -69,7 +68,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   void _selectSession(String id) {
     final notifier = ref.read(chatProvider.notifier);
     notifier.loadSession(id);
-    setState(() => _showDrawer = false);
+    Navigator.of(context).pop();
   }
 
   @override
@@ -78,21 +77,20 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     final l10n = AppLocalizations.of(context);
 
     return Scaffold(
+      // A single menu button — Scaffold auto-generates one that opens
+      // `endDrawer` correctly. A second manual one used to sit in `leading`
+      // but only toggled dead state that nothing read, producing two
+      // hamburger icons where only one actually worked.
       appBar: AppBar(
         title: Text(l10n.aiAssistant),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => setState(() => _showDrawer = !_showDrawer),
-        ),
       ),
       endDrawer: Drawer(
         child: _SessionDrawer(
           onSelect: _selectSession,
           onNew: () {
             ref.read(chatProvider.notifier).newSession();
-            setState(() => _showDrawer = false);
+            Navigator.of(context).pop();
           },
-          onClose: () => setState(() => _showDrawer = false),
         ),
       ),
       body: Column(
@@ -370,9 +368,8 @@ class _StatusIndicator extends ConsumerWidget {
 class _SessionDrawer extends ConsumerWidget {
   final Function(String) onSelect;
   final VoidCallback onNew;
-  final VoidCallback onClose;
 
-  const _SessionDrawer({required this.onSelect, required this.onNew, required this.onClose});
+  const _SessionDrawer({required this.onSelect, required this.onNew});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -393,7 +390,7 @@ class _SessionDrawer extends ConsumerWidget {
                 Text(l10n.sessions, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
                 const Spacer(),
                 IconButton(onPressed: onNew, icon: const Icon(Icons.add)),
-                IconButton(onPressed: onClose, icon: const Icon(Icons.close)),
+                IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.close)),
               ],
             ),
           ),
