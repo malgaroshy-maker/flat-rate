@@ -88,6 +88,10 @@ async def send_message(
     session_id = body.get("session_id", session_id)
     lang = body.get("lang", lang) or "ar"
     history_raw = body.get("history", history)
+    # Optional per-request fallback key — never persisted, never logged.
+    # Lets a client whose shared key is out of quota keep working with
+    # their own free-tier Google API key without any server config change.
+    user_api_key = body.get("gemini_api_key") or None
 
     if not message:
         raise HTTPException(status_code=422, detail="'message' is required")
@@ -129,7 +133,9 @@ async def send_message(
         yield f"data: {json.dumps({'session_id': session_id, 'lang': lang})}\n\n"
 
         try:
-            agen = stream_chat_response(message, session_id, lang, history_messages)
+            agen = stream_chat_response(
+                message, session_id, lang, history_messages, user_api_key=user_api_key,
+            )
             while True:
                 try:
                     event = await asyncio.wait_for(agen.__anext__(), timeout=HEARTBEAT_SECONDS)
@@ -143,6 +149,8 @@ async def send_message(
 
                 if "status" in event:
                     yield f"data: {json.dumps({'status': event['status']})}\n\n"
+                elif "error_type" in event:
+                    yield f"data: {json.dumps({'error_type': event['error_type']})}\n\n"
                 elif "text" in event:
                     full_response += event["text"]
                     yield f"data: {json.dumps({'text': event['text']})}\n\n"

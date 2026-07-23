@@ -15,6 +15,14 @@ from system_prompt import build_system_prompt, format_rag_context
 
 logger = logging.getLogger("chat_engine")
 
+
+class GeminiKeyError(Exception):
+    """Raised when the active Gemini key can't serve the request — invalid,
+    revoked, or out of quota (all surface as 4xx from the API). Distinct
+    from a 5xx ServerError (Gemini's own outage), where a different key
+    wouldn't help, so that stays a generic error."""
+
+
 # Embedding similarity below this is not a real match — it's just whatever
 # ChromaDB's nearest-neighbor search returns for *any* query, including
 # greetings and small talk. Calibrated against real traffic: genuine labor
@@ -30,6 +38,7 @@ async def stream_chat_response(
     session_id: str,
     lang: str = "ar",
     history_messages: list[dict] | None = None,
+    user_api_key: str | None = None,
 ) -> AsyncGenerator[dict[str, Any], None]:
     """Generate a streaming chat response with RAG context and multi-turn history.
 
@@ -37,6 +46,13 @@ async def stream_chat_response(
     - {"status": "searching" | "thinking"} — progress markers for the client
       to render before the first model token arrives
     - {"text": "..."} — a chunk of the assistant's reply
+    - {"error_type": "gemini_key_error"} — the active key (shared, or the
+      caller's own if `user_api_key` was passed) is invalid or out of
+      quota. The client can retry with a personal key it has saved, or
+      prompt the user to provide one — see routers/chat.py.
+
+    `user_api_key`: an optional caller-supplied Gemini key, used instead of
+    the server's shared one for this request only. Never logged or stored.
     """
 
     yield {"status": "searching"}
@@ -102,27 +118,41 @@ If this is a labor/maintenance estimate question, use the historical data above 
     t_llm_start = time.perf_counter()
     first_token_ms: float | None = None
     total_chars = 0
-    stream_fn = _stream_cloud_multi if llm_router.use_cloud else _stream_local_multi
+    key_error = False
     try:
-        async for chunk in stream_fn(system, history_messages or [], user_content):
+        if llm_router.use_cloud:
+            stream = _stream_cloud_multi(system, history_messages or [], user_content, api_key_override=user_api_key)
+        else:
+            stream = _stream_local_multi(system, history_messages or [], user_content)
+        async for chunk in stream:
             if first_token_ms is None:
                 first_token_ms = (time.perf_counter() - t_llm_start) * 1000
             total_chars += len(chunk)
             yield {"text": chunk}
+    except GeminiKeyError as e:
+        key_error = True
+        logger.warning(
+            "gemini_key_error session=%s used_user_key=%s: %s",
+            session_id, bool(user_api_key), e,
+        )
+        yield {"error_type": "gemini_key_error"}
     finally:
         logger.info(
-            "llm_stream session=%s cloud=%s first_token_ms=%s total_ms=%.1f chars=%d",
+            "llm_stream session=%s cloud=%s first_token_ms=%s total_ms=%.1f chars=%d key_error=%s",
             session_id, llm_router.use_cloud,
             f"{first_token_ms:.1f}" if first_token_ms is not None else "n/a",
-            (time.perf_counter() - t_llm_start) * 1000, total_chars,
+            (time.perf_counter() - t_llm_start) * 1000, total_chars, key_error,
         )
 
 
-async def _stream_cloud_multi(system: str, history: list[dict], user_content: str) -> AsyncGenerator[str, None]:
+async def _stream_cloud_multi(
+    system: str, history: list[dict], user_content: str, api_key_override: str | None = None
+) -> AsyncGenerator[str, None]:
     from google import genai
+    from google.genai import errors as genai_errors
     from google.genai import types
 
-    client = genai.Client(api_key=llm_router._api_key_or_none())
+    client = genai.Client(api_key=api_key_override or llm_router._api_key_or_none())
 
     contents = []
     for m in history:
@@ -135,17 +165,24 @@ async def _stream_cloud_multi(system: str, history: list[dict], user_content: st
         temperature=0.3,
     )
 
-    # Use the async client (client.aio) — the sync client.models.generate_content_stream()
-    # blocks the event loop while iterating, which serializes it with every other
-    # request FastAPI is serving and makes tokens arrive in bursts instead of
-    # smoothly. The async client yields control back to the loop between chunks.
-    async for chunk in await client.aio.models.generate_content_stream(
-        model=llm_router.active_model,
-        contents=contents,
-        config=config,
-    ):
-        if chunk.text:
-            yield chunk.text
+    try:
+        # Use the async client (client.aio) — the sync client.models.generate_content_stream()
+        # blocks the event loop while iterating, which serializes it with every other
+        # request FastAPI is serving and makes tokens arrive in bursts instead of
+        # smoothly. The async client yields control back to the loop between chunks.
+        stream = await client.aio.models.generate_content_stream(
+            model=llm_router.active_model,
+            contents=contents,
+            config=config,
+        )
+        async for chunk in stream:
+            if chunk.text:
+                yield chunk.text
+    except genai_errors.ClientError as e:
+        # 4xx: invalid/revoked key or quota exhausted — a different key can
+        # resolve this. genai_errors.ServerError (5xx, Gemini's own outage)
+        # is intentionally NOT caught here and propagates as a generic error.
+        raise GeminiKeyError(str(e)) from e
 
 
 async def _stream_local_multi(system: str, history: list[dict], user_content: str) -> AsyncGenerator[str, None]:
